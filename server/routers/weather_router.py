@@ -11,7 +11,7 @@ router = APIRouter(
     }   
 )
 
-weather_service = WeatherService(api_app_keyname="weather", api_app_key="3a03cb7ea3b729fd6424a566b1fff900")
+weather_service = WeatherService(api_app_keyname="weather", api_key_keyname="3a03cb7ea3b729fd6424a566b1fff900")
 
 @router.get("/", response_model=WeatherResponse)
 async def get_weather(params: WeatherRequest = Depends()):
