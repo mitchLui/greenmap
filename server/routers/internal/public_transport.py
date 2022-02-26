@@ -11,7 +11,7 @@ class PublicTransportService(Service):
         params["app_id"] = self.app_id
         params["app_key"] = self.app_key
         params["lat"] = str(lat)
-        params["lon"] = str(lng)
+        params["long"] = str(lng)
         params["type"] = "train_station" if transport_type == "train" else "bus_stop"
         r = requests.get(PLACES_URL, params)
         if r.status_code == 200:

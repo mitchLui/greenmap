@@ -5,3 +5,5 @@ python-dotenv
 pydantic
 requests
 typing
+haversine
+xmltodict
