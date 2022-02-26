@@ -11,7 +11,7 @@ router = APIRouter(
     }   
 )
 
-voi_service = VoiService(api_app_keyname="voi", api_app_key="voi")
+voi_service = VoiService(api_app_keyname="voi", api_key_keyname="voi")
 
 @router.get("/", response_model=TransportResponse)
 async def get_transport(request: TransportRequest = Depends()):
