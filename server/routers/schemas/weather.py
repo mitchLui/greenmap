@@ -3,15 +3,17 @@ from .common import Coordinates, Response
 
 
 class WeatherRequest(Coordinates):
-    radius: float
+    pass
 
 
 class WeatherDataResponse(BaseModel):
     temp: float
-    api: float
+    aqi: float
     humidity: float
+    icon_url: str
+    description: str
+    description_detailed: str
     timestamp: str
-
 
 class WeatherResponse(Response):
     data: WeatherDataResponse

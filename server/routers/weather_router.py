@@ -11,17 +11,19 @@ router = APIRouter(
     }   
 )
 
-weather_service = WeatherService(api_app_keyname="weather", api_key_keyname="3a03cb7ea3b729fd6424a566b1fff900")
+weather_service = WeatherService(api_app_keyname = "weather", api_key_keyname="OPENWEATHERAPIKEY")
 
 @router.get("/", response_model=WeatherResponse)
 async def get_weather(params: WeatherRequest = Depends()):
+    data, status_code = weather_service.get_weather(params.long, params.lat)
+    if status_code == 200:
+        message = f"Got data for {params.long}, {params.lat}"
+        success = True
+    else:
+        message = data["message"]
+        success = False
     return JSONResponse({
-        "data": {
-            "temp": 69.69,
-            "aqi": 69.69,
-            "humidity": 69.69,
-            "timestamp": "lol"
-        },
-        "message": "weather at BS8 13:13:lol",
-        "success": True
-    }, 200)
+        "data": data,
+        "message": message,
+        "success": success
+    }, status_code)
