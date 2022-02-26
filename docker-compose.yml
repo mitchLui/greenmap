@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: "frontend"
+    hostname: "frontend"
+    container_name: "frontend"
+    build: ./client
+    ports:
+      - 8080:3000
+    labels:
+      kompose.service.type: LoadBalancer
+      kompose.image-pull-policy: "Never"
+  backend:
+    image: "backend"
+    hostname: "backend"
+    container_name: "backend"
+    build: ./server
+    ports:
+      - 5001:80
