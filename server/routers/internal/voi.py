@@ -80,9 +80,16 @@ class VoiService(Service):
         self.update_api_key()
 
     def get_vehicles(self, zone_id: int):
-        print(zone_id)
         r = requests.get(VOIAPIVEHICLES, {"zone_id": zone_id}, headers={"x-access-token": self.app_key})
-        print(r.text)
+        if r.status_code != 200:
+            return None
+        vehicles = r.json()["data"]["vehicle_groups"][0]["vehicles"]
+        pos = []
+        for v in vehicles:
+            pos.append((v["location"]["lat"], v["location"]["lng"]))
+        for i in range(2, len(pos)):
+            print(i)
+            print(validate_solution(20, create_clusters(i, pos)))
 
     def get_zones(self, lat: float, lon: float) -> dict:
         r = requests.get(VOIAPIZONEURL, {"lat": lat, "lng": lon}, headers={"x-access-token": self.app_key})
