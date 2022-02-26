@@ -1,4 +1,3 @@
-from .service import Service
 import requests
 import xmltodict  # convert xml to json
 import json
@@ -7,7 +6,7 @@ import haversine as hs  # used for distance calculations between coordinates
 SANTANDER_URL = "https://tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml"
 
 
-class SantanderCycles(Service):
+class SantanderCycles():
 
     def get_cycles(self, lat: float, lng: float, radius: float):
         r = requests.get(SANTANDER_URL)
@@ -51,4 +50,4 @@ class SantanderCycles(Service):
 
 if __name__ == "__main__":
     cycle_service = SantanderCycles()
-    cycle_service.get_cycles(51.5007, -0.1246, 1000)
+    print(cycle_service.get_cycles(51.5007, -0.1246, 1000))
