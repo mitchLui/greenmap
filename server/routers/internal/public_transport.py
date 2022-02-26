@@ -1,4 +1,4 @@
-from service import Service
+from .service import Service
 import requests
 
 PLACES_URL: str = "https://transportapi.com/v3/uk/places.json?"
@@ -19,6 +19,12 @@ class PublicTransportService(Service):
         else:
             return None
 
+    def get_train_stations(self, lat: float, lng: float):
+        return self.get_stations(lat, lng, "train")
+
+    def get_bus_stations(self, lat: float, lng: float):
+        return self.get_stations(lat, lng, "bus_stop")
+
     def filter_results(self, results: dict):
         stations: list = []
         for entry in results["member"]:
@@ -32,4 +38,5 @@ class PublicTransportService(Service):
 
 
 if __name__ == "__main__":
-    train_service = PublicTransportService("TRANSPORTAPIAPPID", "TRANSPORTAPIAPPKEY")
+    public_transport = PublicTransportService("TRANSPORTAPIAPPID", "TRANSPORTAPIAPPKEY")
+    print(public_transport.get_stations(51.455795, -2.602835, "train"))
