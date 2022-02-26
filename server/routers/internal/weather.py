@@ -1,4 +1,6 @@
 from .service import Service
 
 class WeatherService(Service):
-    pass
+    
+    def get_weather(self, long: float, lat: float, radius: float) -> dict:
+        pass
