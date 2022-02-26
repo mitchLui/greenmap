@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
-from .internal.weather import Weather
+from .internal.weather import WeatherService
 from .schemas.weather import WeatherRequest, WeatherResponse
 
 router = APIRouter(
@@ -11,7 +11,7 @@ router = APIRouter(
     }   
 )
 
-weater = Weather()
+weather_service = WeatherService(api_app_keyname="weather", api_app_key="3a03cb7ea3b729fd6424a566b1fff900")
 
 @router.get("/", response_model=WeatherResponse)
 async def get_weather(params: WeatherRequest = Depends()):

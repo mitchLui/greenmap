@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
-from .internal.voi import Transport
+from .internal.voi import VoiService
 from .schemas.transport import TransportRequest, TransportResponse
 
 router = APIRouter(
@@ -11,7 +11,7 @@ router = APIRouter(
     }   
 )
 
-transport = Transport()
+voi_service = VoiService(api_app_keyname="voi", api_app_key="voi")
 
 @router.get("/", response_model=TransportResponse)
 async def get_transport(request: TransportRequest = Depends()):

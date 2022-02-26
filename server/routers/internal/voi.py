@@ -1,4 +1,7 @@
 from .service import Service
 
 class VoiService(Service):
-    pass
+    
+
+    def get_vehicles(self):
+        pass

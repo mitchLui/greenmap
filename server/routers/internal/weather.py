@@ -1,4 +1,4 @@
 from .service import Service
 
-class Weather(Service):
+class WeatherService(Service):
     pass
