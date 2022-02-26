@@ -15,6 +15,7 @@ class TransportDataResponse(BaseModel):
     trains: List[Coordinates]
     bus_stns: List[Coordinates]
     bicycles: List[VehicleData]
+    timestamp: str
 
 
 class TransportResponse(Response):

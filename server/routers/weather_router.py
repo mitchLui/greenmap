@@ -19,7 +19,8 @@ async def get_weather(params: WeatherRequest = Depends()):
         "data": {
             "temp": 69.69,
             "aqi": 69.69,
-            "humidity": 69.69
+            "humidity": 69.69,
+            "timestamp": "lol"
         },
         "message": "weather at BS8 13:13:lol",
         "success": True

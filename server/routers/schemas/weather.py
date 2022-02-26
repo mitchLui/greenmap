@@ -10,6 +10,7 @@ class WeatherDataResponse(BaseModel):
     temp: float
     api: float
     humidity: float
+    timestamp: str
 
 
 class WeatherResponse(Response):
