@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
-from .internal.transport import Transport
+from .internal.voi import Transport
 from .schemas.transport import TransportRequest, TransportResponse
 
 router = APIRouter(

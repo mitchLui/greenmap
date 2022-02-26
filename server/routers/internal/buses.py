@@ -1,4 +1,4 @@
 from .service import Service
 
-class Transport(Service):
+class BusService(Service):
     pass
