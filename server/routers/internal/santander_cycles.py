@@ -4,6 +4,7 @@ import json
 import haversine as hs  # used for distance calculations between coordinates
 
 SANTANDER_URL = "https://tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml"
+COST_PER_HALF_AN_HOUR = "2.00"
 
 
 class SantanderCycles():
@@ -45,6 +46,7 @@ class SantanderCycles():
             station.pop("nbDocks")
             station["bikes"] = station.pop("nbBikes")
             station["spaces"] = station.pop("nbEmptyDocks")
+            station["cost"] = COST_PER_HALF_AN_HOUR
         return stations
 
 
