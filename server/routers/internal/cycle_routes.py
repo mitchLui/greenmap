@@ -21,8 +21,6 @@ class CycleRoutesService(Service):
         url = CYCLE_JOURNEY_URL + f"from/lonlat:{str(src_lng)},{str(src_lat)}/to/lonlat:{str(dest_lng)},{str(dest_lat)}"
         r = requests.get(url, params)
         if r.status_code == 200:
-            print("200")
-            print(r.json())
             results = r.json()
             return self.filter_results(results)
         else:
