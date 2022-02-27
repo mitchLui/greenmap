@@ -1,5 +1,7 @@
 from service import Service
+from clustering import ClusterService
 import requests
+import json
 
 TIER_URL: str = "https://platform.tier-services.io/v1/vehicle?"
 TIER_PRICING_URL: str = "https://platform.tier-services.io/v2/pricing?"
@@ -57,4 +59,13 @@ class TierScooterService(Service):
 
 if __name__ == "__main__":
     scooter_service = TierScooterService("", "TIERAPIKEY")
-    print(scooter_service.get_scooters(51.5007, -0.1246, 8000))
+    clustering_service = ClusterService()
+    scooters = scooter_service.get_scooters(51.5007, -0.1246, 1500)
+    groups = clustering_service.g_cluster(scooters)
+    with open("output.txt", "w") as file:
+        for group in groups:
+            file.write(f"{group['lat']},{group['long']},blue,marker,'hi'\n")
+        for scooter in scooters:
+            file.write(f"{scooter['lat']},{scooter['long']},red,marker,'hi'\n")
+        #file.write(json.dumps(groups))
+    #print(json.dumps(groups))
