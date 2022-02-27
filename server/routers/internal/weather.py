@@ -1,4 +1,4 @@
-from service import Service
+from .service import Service
 from datetime import datetime
 from typing import Union
 import requests

@@ -1,13 +1,14 @@
 import haversine as hs
 import json
 
-from santander_cycles import SantanderCycles
-from tier_scooters import TierScooterService
-from voi import VoiService
-from cycle_routes import CycleRoutesService
-from timing_service import TimingService
-from carbon_offset import CarbonOffsetCalculator
-from public_transport_routes import PublicTransportRoutingService
+from .cycle_routes import CycleRoutesService
+from .santander_cycles import SantanderCycles
+from .tier_scooters import TierScooterService
+from .voi import VoiService
+from .cycle_routes import CycleRoutesService
+from .timing_service import TimingService
+from .carbon_offset import CarbonOffsetCalculator
+from .public_transport_routes import PublicTransportRoutingService
 
 # The acceptable distance to walk to the nearest vehicle
 DISTANCE_TO_VEHICLE_LIMIT = 250  # metres
