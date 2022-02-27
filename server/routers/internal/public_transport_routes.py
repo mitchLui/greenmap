@@ -24,11 +24,22 @@ class PublicTransportRoutingService(Service):
         if routes is None:
             return None
         newRoutes = []
-        for route in routes:
-            print(route)
+        voi_service_cache = {}
+        for route in routes["routes"][:1]:
+            for part in route["route_parts"]:
+                if part["mode"] == "foot":
+                    f = (from_lat, from_lon)
+                    t = (to_lat, to_lon)
+                    if part["from_point_name"] != "Journey Origin":
+                        f = (part["from_point"]["place"]["latitude"], part["from_point"]["place"]["longitude"])
+                    if part["to_point_name"] != "Journey Destination":
+                        t = (part["to_point"]["place"]["latitude"], part["to_point"]["place"]["longitude"])
+                    print("Hi")
+                    print(part)
 
 
 if __name__ == "__main__":
     transport_service = PublicTransportRoutingService("TRANSPORTAPIAPPID", "TRANSPORTAPIAPPKEY")
+    voi_service = VoiService("VOIAPIAUTHTOCKEN")
     # print(transport_service.get_routes(51.449142, -2.581315, 51.504937, -2.562431)["routes"])
-    transport_service.get_routes_voi(51.449142, -2.581315, 51.504937, -2.562431)
+    transport_service.get_routes_voi(51.449142, -2.581315, 51.504937, -2.562431, voi_service)
