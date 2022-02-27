@@ -1,14 +1,14 @@
 from .service import Service
-import time
-import os
-import requests
-from clustering import g_cluster
+from .clustering import g_cluster
 import haversine as hs  # used for distance calculations between coordinates
+import requests
 
 
 VOIAPIUPDATEURL = "https://api.voiapp.io/v1/auth/session"
 VOIAPIZONEURL = "https://api.voiapp.io/v1/zones"
 VOIAPIVEHICLES = "https://api.voiapp.io/v2/rides/vehicles"
+
+#TODO
 
 def get_carbon_information(route: dict) -> dict[str, int]:
     results = {}
@@ -71,4 +71,4 @@ class VoiService(Service):
 
 if __name__ == "__main__":
     voi_service = VoiService("VOIAPIAUTHTOCKEN")
-    voi_service.get_vehicles(41.9028, 12.4964, 500)
+    print(voi_service.get_vehicles(41.9028, 12.4964, 500))

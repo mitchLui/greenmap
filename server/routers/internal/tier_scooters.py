@@ -1,10 +1,11 @@
-from service import Service
-from clustering import g_cluster
+from .service import Service
+from .clustering import g_cluster
 import requests
 
 TIER_URL: str = "https://platform.tier-services.io/v1/vehicle?"
 TIER_PRICING_URL: str = "https://platform.tier-services.io/v2/pricing?"
 
+#TODO
 
 class TierScooterService(Service):
 
@@ -32,13 +33,13 @@ class TierScooterService(Service):
             scooter: dict = dict()
             scooter["lat"] = entry["attributes"]["lat"]
             scooter["long"] = entry["attributes"]["lng"]
-            scooter["licencePlate"] = entry["attributes"]["licencePlate"]
-            scooter["batteryLevel"] = entry["attributes"]["batteryLevel"]
+            scooter["reg"] = entry["attributes"]["licencePlate"]
+            scooter["battery"] = entry["attributes"]["batteryLevel"]
             if not self.price_found:
                 self.start_price, self.per_min_cost = self.get_cost(entry["id"])
                 self.price_found = True
-            scooter["startPrice"], scooter["perMinuteCost"] = self.start_price, self.per_min_cost
-            test.add((scooter["startPrice"], scooter["perMinuteCost"]))
+            scooter["start_price"], scooter["minute_cost"] = self.start_price, self.per_min_cost
+            test.add((scooter["start_price"], scooter["minute_cost"]))
             scooters.append(scooter)
 
         return scooters
@@ -57,5 +58,6 @@ class TierScooterService(Service):
 
 if __name__ == "__main__":
     scooter_service = TierScooterService("", "TIERAPIKEY")
-    scooters = scooter_service.get_scooters(51.5007, -0.1246, 1500)
+    scooters = scooter_service.get_scooters(51.5160, -0.1749, 1500)
     groups = g_cluster(scooters)
+    print(groups)
