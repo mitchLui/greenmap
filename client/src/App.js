@@ -3,6 +3,7 @@ import {Navbar} from "./Components/Navbar/Navbar";
 import {Mapbox} from "./Components/Map/Mapbox";
 import {Search} from "./Components/Search/Search";
 import {useEffect, useState} from "react";
+import { Weather } from './Components/Weather/Weather';
 
 function App() {
     const [searchBarVisibility, setSearchBarVisibility] = useState(false)
@@ -45,7 +46,7 @@ function App() {
             <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility} lat={lat}
                     setLat={setLat} lng={lng} setLng={lng} centre={centre} setCentre={setCentre}/>
             <Clock />
-
+            <Weather />
             {
                 searchBarVisibility &&
                 <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}

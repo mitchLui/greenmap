@@ -1,33 +1,24 @@
-import { useState } from "react";
 import "./Weather.css"
 
-const weatherApiUrl = "http://localhost:5001/weather";
+const weatherApiUrl = "http://localhost:80/weather";
 
-export const WeatherBox = (lat, long) => {
-    const [width, setWidth] = useState(200);
-    const [height, setHeight] = useState(200);
-    const [lat, setLat] = useState(0);
-    const [long, setLong] = useState(0);
+export const Weather = ({lat, long}) => {
+    
+    const weatherApi = `${weatherApiUrl}?lat=${lat}&long=${long}`;
 
-    useEffect(() => {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            setLat(position.coords.latitude);
-            setLong(position.coords.longitude);
-    })});
-
-    const weatherData = fetch(weatherApiUrl, {
-        method: "POST",
+    const weatherData = fetch(weatherApi, {
+        method: "GET",
         mode: "cors",
         headers: {
+            "Allow-Control-Allow-Origin": "*",
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({"lat": lat, "long": long})
     }).then(res => res.json()).then(json => console.log(json));
 
-    return <WeatherBox 
-        width={width}
-        height={height}
-        weatherData={weatherData}
-    />
+    return (<div className={"weather"}>
+                <div className={"weather-icon"}>
+                    <img src={weatherData.data.icon_url} alt="weather icon"/>
+                </div>
+        </div>)
     
 };
