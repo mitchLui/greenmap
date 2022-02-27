@@ -7,3 +7,4 @@ requests
 typing
 haversine
 xmltodict
+loguru
