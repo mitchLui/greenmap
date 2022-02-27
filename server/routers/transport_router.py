@@ -4,7 +4,6 @@ from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, wait
 from traceback import format_exc
 from loguru import logger
-from sqlalchemy import JSON
 
 from .internal.chargers import ChargingService
 from .internal.voi import VoiService
