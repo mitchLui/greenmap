@@ -21,7 +21,7 @@ async def get_weather(params: WeatherRequest = Depends()):
             "temp": 7,
             "aqi": 41,
             "humidity": 81,
-            "icon_url": "http://openweathermap.org/img/wn/01d@2x.png",
+            "icon_url": "http://openweathermap.org/img/wn/02d@2x.png",
             "description": "Clear",
             "description_detailed": "clear sky",
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
