@@ -22,8 +22,8 @@ def filter_results(res) -> list:
             leg["path"] = part["coordinates"]
             leg["dep_time"] = part["departure_datetime"]
             leg["arr_time"] = part["arrival_datetime"]
-            leg["from"] = part["from_point_name"]
-            leg["to"] = part["from_point_name"]
+            leg["src"] = part["from_point_name"]
+            leg["dest"] = part["from_point_name"]
             leg["line"] = part["line_name"]
             journey["legs"].append(leg)
         journeys.append(journey)
