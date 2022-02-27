@@ -33,7 +33,6 @@ class ClusterService:
         min_dist: float = math.inf
         for group in groups:
             dist_to_group = hs.haversine((group["lat"], group["long"]), (lat, lng), unit=hs.Unit.METERS)
-            print(dist_to_group)
             if dist_to_group <= DISTANCE_LIMIT and dist_to_group <= min_dist:
                 closest_group = group
                 min_dist = dist_to_group
@@ -42,8 +41,8 @@ class ClusterService:
 
     def update_group(self, group: dict, new_vehicle: dict) -> None:
         n: int = len(group["vehicles"])
-        group["lat"] = (group["lat"] * n + float(new_vehicle["lat"])) / n + 1
-        group["long"] = (group["long"] * n + float(new_vehicle["long"])) / n + 1
+        group["lat"] = (group["lat"] * n + float(new_vehicle["lat"])) / (n + 1)
+        group["long"] = (group["long"] * n + float(new_vehicle["long"])) / (n + 1)
         group["vehicles"].append(new_vehicle)
 
     def new_group(self, vehicle: dict) -> dict:

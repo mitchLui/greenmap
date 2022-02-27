@@ -18,11 +18,11 @@ class TierScooterService(Service):
     def get_scooters(self, lat: float, lng: float, radius: float):
         params: dict = {"lat": str(lat), "lng": str(lng), "radius": str(radius)}
         r = requests.get(TIER_URL, params=params, headers={"X-Api-Key": self.app_key})
-        print(r.status_code)
         if r.status_code == 200:
             data = r.json()["data"]
             scooters = self.filter_data(data)
-            return scooters
+            scooter_groups = clustering_service.g_cluster(scooters)
+            return scooter_groups
         else:
             return []
 
@@ -41,7 +41,6 @@ class TierScooterService(Service):
             scooter["startPrice"], scooter["perMinuteCost"] = self.start_price, self.per_min_cost
             test.add((scooter["startPrice"], scooter["perMinuteCost"]))
             scooters.append(scooter)
-        print(test)
 
         return scooters
 
@@ -62,10 +61,3 @@ if __name__ == "__main__":
     clustering_service = ClusterService()
     scooters = scooter_service.get_scooters(51.5007, -0.1246, 1500)
     groups = clustering_service.g_cluster(scooters)
-    with open("output.txt", "w") as file:
-        for group in groups:
-            file.write(f"{group['lat']},{group['long']},blue,marker,'hi'\n")
-        for scooter in scooters:
-            file.write(f"{scooter['lat']},{scooter['long']},red,marker,'hi'\n")
-        #file.write(json.dumps(groups))
-    #print(json.dumps(groups))
