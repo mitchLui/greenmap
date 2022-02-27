@@ -21,8 +21,8 @@ class ChargingService(Service):
                     ]
                 filtered_chargers.append(
                     {
-                        "long": address_info["Latitude"],
-                        "lat": address_info["Longitude"],
+                        "long": address_info["Longitude"],
+                        "lat": address_info["Latitude"],
                         "access_comments": address_info.get("AccessComments", ""),
                         "chargers": {
                             "spaces": c.get("NumberOfPoints", "Unknown"),
