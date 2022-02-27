@@ -20,11 +20,15 @@ class PublicTransportRoutingService(Service):
             return None
 
     def get_routes_voi(self, from_lat: float, from_lon: float, to_lat: float, to_lon: float, voi_service: VoiService):
-        pass
+        routes = self.get_routes(from_lat, from_lon, to_lat, to_lon)
+        if routes is None:
+            return None
+        newRoutes = []
+        for route in routes:
+            print(route)
 
 
 if __name__ == "__main__":
     transport_service = PublicTransportRoutingService("TRANSPORTAPIAPPID", "TRANSPORTAPIAPPKEY")
-    for part in transport_service.get_routes(51.449142, -2.581315, 51.504937, -2.562431)["routes"][0]["route_parts"]:
-        for c in part["coordinates"]:
-            print(f'{c[1]},{c[0]},blue,marker,"hi"')
+    # print(transport_service.get_routes(51.449142, -2.581315, 51.504937, -2.562431)["routes"])
+    transport_service.get_routes_voi(51.449142, -2.581315, 51.504937, -2.562431)

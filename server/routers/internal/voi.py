@@ -5,6 +5,7 @@ import requests
 import numpy as np
 from sklearn.cluster import KMeans
 from scipy.spatial.distance import cdist
+from clustering import ClusterService
 import math
 from apscheduler.schedulers.background import BackgroundScheduler
 import haversine as hs  # used for distance calculations between coordinates
@@ -40,14 +41,25 @@ class VoiService(Service):
         # scheduler.start()
         self.update_api_key()
 
-    def get_vehicles(self, zone_id: int):
+    def get_vehicles(self, lat: float, long: float, radius: int, cs: ClusterService):
+        zone_id = self.get_zones(lat, long)
+        if zone_id is None:
+            return None
+        zone_id = zone_id["zone_id"]
         r = requests.get(VOIAPIVEHICLES, {"zone_id": zone_id}, headers={"x-access-token": self.app_key})
         if r.status_code != 200:
             return None
-        vehicles = r.json()["data"]["vehicle_groups"][0]["vehicles"]
-        pos = []
-        for v in vehicles:
-            pos.append((v["location"]["lat"], v["location"]["lng"]))
+        classes = r.json()["data"]["vehicle_groups"]
+        if len(classes) == 0:
+            return None
+        vehicles = classes[0]["vehicles"]
+        inRange = []
+        for vehicle in vehicles:
+            vLat = vehicle["location"]["lat"]
+            vLong = vehicle["location"]["lng"]
+            if hs.haversine((lat, long), (vLat, vLong), unit=hs.Unit.METERS) < radius:
+                inRange.append({"reg": vehicle["short"], "battery": vehicle["battery"], "lat": vLat, "long": vLong})
+        return cs.g_cluster(inRange)
 
     def get_zones(self, lat: float, lon: float) -> dict:
         r = requests.get(VOIAPIZONEURL, {"lat": lat, "lng": lon}, headers={"x-access-token": self.app_key})
@@ -64,4 +76,5 @@ class VoiService(Service):
 
 if __name__ == "__main__":
     voi_service = VoiService("VOIAPIAUTHTOCKEN")
-    voi_service.get_vehicles(voi_service.get_zones(51.4545, -2.5879)["zone_id"])
+    cs = ClusterService()
+    voi_service.get_vehicles(41.9028, 12.4964, 500, cs)
