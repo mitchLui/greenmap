@@ -132,7 +132,6 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
         }
         <div className={"map-controls"}>
             {/* TODO: make accessible */}
-            {console.log(transport)}
             <button onClick={() => setZoom(zoom + 1)}>+</button>
             <button onClick={() => setZoom(zoom - 1)}>-</button>
             <button onClick={() => setSearchBarVisibility(!searchBarVisibility)}><FontAwesomeIcon
