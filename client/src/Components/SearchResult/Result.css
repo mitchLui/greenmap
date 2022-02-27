@@ -3,3 +3,12 @@
     top: 30%;
     left: 30px;
 }
+
+.route{
+    display: table;
+    width: auto;
+    background-color: #000;
+    opacity: 20%;
+    border: 1px solid #fff;
+    border-spacing: 2px;
+
