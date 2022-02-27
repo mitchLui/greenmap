@@ -15,7 +15,7 @@ export const WeatherBox = (lat, long) => {
             setLong(position.coords.longitude);
     })});
 
-    const weatherData = await fetch(weatherApiUrl, {
+    const weatherData = fetch(weatherApiUrl, {
         method: "POST",
         mode: "cors",
         headers: {
