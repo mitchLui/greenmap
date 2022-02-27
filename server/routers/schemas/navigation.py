@@ -16,12 +16,6 @@ class Leg(BaseModel):
     cost: Optional[float] = None
     distance: float
 
-    @validator("path")
-    def path_validator(cls, v):
-        for u in v:
-            if len(u) != 2:
-                raise ValueError("Path must have 2 values")
-
 class Route(BaseModel):
     time: float
     emissions: float
