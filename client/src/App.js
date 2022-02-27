@@ -9,11 +9,10 @@ const weatherApiUrl = "https://909f-2001-630-e4-4220-55c7-d61c-6788-9101.ngrok.i
 
 function App() {
     const [searchBarVisibility, setSearchBarVisibility] = useState(false)
-    const [lat, setLat] = useState(0)
-    const [lng, setLng] = useState(0)
-    const [centre, setCentre] = useState([]);
     const [weather, setWeather] = useState({icon_url: undefined});
-
+    const [lat, setLat] = useState(51.4558058)
+    const [lng, setLng] = useState(-2.602799)
+    const [centre, setCentre] = useState([51.4558058, -2.602799]);
     const weatherApi = `${weatherApiUrl}?lat=${52}&long=${-2}`;
 
     fetch(weatherApi, {
@@ -64,7 +63,7 @@ function App() {
             {
                 searchBarVisibility &&
                 <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
-                        lat={lat} lng={lng}/>
+                        lat={lat} lng={lng} setCentre={setCentre}/>
             }
         </div>
     );
