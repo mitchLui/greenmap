@@ -1,5 +1,5 @@
 from service import Service
-from clustering import ClusterService
+from clustering import g_cluser
 import requests
 import json
 
@@ -21,7 +21,7 @@ class TierScooterService(Service):
         if r.status_code == 200:
             data = r.json()["data"]
             scooters = self.filter_data(data)
-            scooter_groups = clustering_service.g_cluster(scooters)
+            scooter_groups = g_cluster(scooters)
             return scooter_groups
         else:
             return []
@@ -58,6 +58,5 @@ class TierScooterService(Service):
 
 if __name__ == "__main__":
     scooter_service = TierScooterService("", "TIERAPIKEY")
-    clustering_service = ClusterService()
     scooters = scooter_service.get_scooters(51.5007, -0.1246, 1500)
-    groups = clustering_service.g_cluster(scooters)
+    groups = g_cluster(scooters)
