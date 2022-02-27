@@ -15,11 +15,6 @@ DISTANCE_TO_VEHICLE_LIMIT = 250  # metres
 # The acceptable extra distance to the journey to get the vehicle
 EXTRA_DISTANCE_TO_GET_VEHICLE = 10  # percentage
 
-
-# TODO: ADD PUBLIC TRANSPORT
-# TODO: MULTITHREADING OR LIMIT TO CLOSEST VEHICLE STATION
-# TODO: IMPLEMENT ADD COST FUNCTION
-
 class RecommendedRoutesService:
     def __init__(self):
         self.cycle_routes_service = CycleRoutesService("TRANSPORTAPIAPPID", "TRANSPORTAPIAPPKEY")
@@ -54,7 +49,8 @@ class RecommendedRoutesService:
         if src_cycle is not None and dest_cycle is not None:
             res = self.filter_by_dist(src_lat, src_lng, dest_lat, dest_lng, src_cycle, dest_cycle, "cycle", dist)
             if len(res) > 0:
-                routes.extend(res)
+                self.get_cost(res["legs"], float(res["time"]))
+                routes.append(res)
 
         # Get TIER Scooters
         src_tiers = tier_service.get_scooters(src_lat, src_lng, DISTANCE_TO_VEHICLE_LIMIT)
@@ -64,7 +60,8 @@ class RecommendedRoutesService:
         if src_tier is not None and dest_tier is not None:
             res = self.filter_by_dist(src_lat, src_lng, dest_lat, dest_lng, src_tier, dest_tier, "tier", dist)
             if len(res) > 0:
-                routes.extend(res)
+                self.get_cost(res["legs"], float(res["time"]))
+                routes.append(res)
 
         # Get Voi Scooters
         src_vois = voi_service.get_vehicles(src_lat, src_lng, DISTANCE_TO_VEHICLE_LIMIT)
@@ -73,8 +70,10 @@ class RecommendedRoutesService:
         dest_voi = self.closest_location(dest_lat, dest_lng, dest_vois)
         if src_voi is not None and dest_voi is not None:
             res = self.filter_by_dist(src_lat, src_lng, dest_lat, dest_lng, src_voi, dest_voi, "voi", dist)
+            print(res)
             if len(res) > 0:
-                routes.extend(res)
+                self.get_cost(res["legs"], float(res["time"]))
+                routes.append(res)
 
         return routes
 
@@ -83,9 +82,8 @@ class RecommendedRoutesService:
                        src_lat: float, src_lng: float,
                        dest_lat: float, dest_lng: float,
                        start: dict, drop_off: dict,
-                       mode: str, orig_dist: float) -> list:
+                       mode: str, orig_dist: float) -> dict:
 
-        routes: list = []
         dist_travelled: float = 0
         legs: list[dict] = []
         res = self.cycle_routes_service.get_route(src_lat, src_lng, start["lat"], start["long"])
@@ -95,12 +93,11 @@ class RecommendedRoutesService:
         res = self.cycle_routes_service.get_route(start["lat"], start["long"], drop_off["lat"],
                                                               drop_off["long"])
         time = self.timing_service.get_travelling_time(res["distance"])
-        cost = self.get_cost(time, mode)
         if mode == "voi" or mode == "tier":
             carbon = self.carbon_service.calculate_carbon_offset(float(dist_travelled), "scooter")
         else:
             carbon = 0
-        leg: dict = {"mode": mode, "dist": res["distance"], "path": res["path"], "cost": cost}
+        leg: dict = {"mode": mode, "dist": res["distance"], "path": res["path"]}
         dist_travelled += float(res["distance"])
         legs.append(leg)
         res = self.cycle_routes_service.get_route(drop_off["lat"], drop_off["long"], dest_lat, dest_lng)
@@ -109,9 +106,8 @@ class RecommendedRoutesService:
         legs.append(leg)
         time = self.timing_service.get_travelling_time(dist_travelled)
         route = {"time": time, "emissions": carbon, "dist": dist_travelled, "legs": legs}
-        routes.append(route)
 
-        return routes
+        return route
 
     # Sorts the list by location and returns the closest location
     def closest_location(self, lat: float, lng: float, locations: list):
@@ -122,21 +118,21 @@ class RecommendedRoutesService:
             return None
 
     # Get cost of journey given time and mode of transport
-    def get_cost(self, time: float, mode: str) -> float:
-        # TODO: Get cost based on mode of transport
-        """
-        if mode == "cycle":
-        elif mode == "tier":
-        elif mode == "voi":
-        """
-        return None
+    def get_cost(self, legs: list[dict], time: float) -> float:
+        for leg in legs:
+            if leg["mode"] == "cycle":
+                leg["cost"] = (time/30) * 2.00
+            elif leg["mode"] == "tier":
+                leg["cost"] = 1.00 + (time * 0.15)
+            elif leg["mode"] == "voi":
+                leg["cost"] = 1.00 + (time * 0.20)
+
 
     def find_public_transport(self, src_lat: float, src_lng: float, dest_lat: float, dest_lng: float) -> list:
         routes = self.public_transport.get_routes(src_lat, src_lng, dest_lat, dest_lng)
         for route in routes:
             route["emissions"] = self.carbon_service.calculate_carbon_offset(float(route["dist"]), "train")
         return routes
-
 
 
 if __name__ == "__main__":
