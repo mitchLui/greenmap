@@ -1,4 +1,6 @@
-from service import Service
+from .service import Service
+import time
+import os
 import requests
 from clustering import g_cluster
 import haversine as hs  # used for distance calculations between coordinates

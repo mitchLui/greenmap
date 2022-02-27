@@ -21,7 +21,7 @@ router = APIRouter(
 )
 
 public_transport_service = PublicTransportService("TRANSPORTAPIAPPID", "TRANSPORTAPIAPPKEY")
-voi_service = VoiService(api_app_keyname="voi", api_key_keyname="voi")
+voi_service = VoiService("VOIAPIAUTHTOCKEN")
 ev_charger_service = ChargingService("CHARGERAPIAPPKEY")
 santander_cycles_service = SantanderCycles()
 
