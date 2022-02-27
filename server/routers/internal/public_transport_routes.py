@@ -1,5 +1,5 @@
 #* PRIVATE
-from service import Service
+from .service import Service
 import requests
 
 PLACES_URL: str = "https://transportapi.com/v3/uk/public_journey.json"
