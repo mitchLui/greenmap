@@ -1,3 +1,22 @@
 .map-container {
     height: 100vh;
 }
+
+.map-controls {
+    position: fixed;
+    right: 2rem;
+    top: 10rem;
+    font-size: 1.5rem;
+}
+
+.map-controls button {
+    display: block;
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+    margin-bottom: 1rem;
+    background-color: #212121;
+    color: #fff;
+    border: 1px solid #757575;
+    font-size: 1em;
+}

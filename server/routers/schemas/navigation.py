@@ -15,6 +15,9 @@ class Leg(BaseModel):
     path: List[List[int]]
     cost: Optional[float] = None
     distance: float
+    name: Optional[str] = None
+    dep_time: Optional[str] = None
+    arr_time: Optional[str] = None
 
 class Route(BaseModel):
     time: float
