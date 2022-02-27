@@ -54,21 +54,27 @@ export const Mapbox = () => {
     })
 
     const handleWheelZoom = ({originalEvent: {deltaY}}) => {
-        setZoom(zoom - deltaY/20);
+        setZoom(zoom - deltaY*(zoom/10000));
     }
 
     const handleDrag = (e) => {
-        setCentre([centre[1] - (dragStart[1] - e.originalEvent.screenY)/(10000*zoom), centre[0] - (dragStart[0] - e.originalEvent.screenX)/(10000*zoom)]);
+        if(centre.length > 0) {
+            const scaleFactor = (5000/Math.pow(zoom, 7));
+            console.log(scaleFactor)
+            console.log(zoom)
+            const newLat = centre[0] - ((dragStart[1] - e.originalEvent.screenY) * scaleFactor);
+            const newLong = centre[1] + ((dragStart[0] - e.originalEvent.screenX) * scaleFactor);
+            setCentre([newLat, newLong]);
+            setDragStart([e.originalEvent.screenX, e.originalEvent.screenY]);
+        }
     }
-
-    console.log(centre)
 
     return <Map
         scrollZoom={false}
         doubleClickZoom={false}
         zoom={zoom}
-        latitude={centre[0]}
-        longitude={centre[1]}
+        latitude={centre[0] || 0}
+        longitude={centre[1] || 0}
         mapboxAccessToken={token}
         className={"map-container"}
         style={{width, height}}
