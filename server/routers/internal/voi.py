@@ -2,10 +2,7 @@ from service import Service
 import time
 import os
 import requests
-import numpy as np
-from sklearn.cluster import KMeans
-from scipy.spatial.distance import cdist
-from clustering import ClusterService
+from clustering import g_cluster
 import math
 from apscheduler.schedulers.background import BackgroundScheduler
 import haversine as hs  # used for distance calculations between coordinates
@@ -41,7 +38,7 @@ class VoiService(Service):
         # scheduler.start()
         self.update_api_key()
 
-    def get_vehicles(self, lat: float, long: float, radius: int, cs: ClusterService):
+    def get_vehicles(self, lat: float, long: float, radius: int):
         zone_id = self.get_zones(lat, long)
         if zone_id is None:
             return None
@@ -59,7 +56,7 @@ class VoiService(Service):
             vLong = vehicle["location"]["lng"]
             if hs.haversine((lat, long), (vLat, vLong), unit=hs.Unit.METERS) < radius:
                 inRange.append({"reg": vehicle["short"], "battery": vehicle["battery"], "lat": vLat, "long": vLong})
-        return cs.g_cluster(inRange)
+        return g_cluster(inRange)
 
     def get_zones(self, lat: float, lon: float) -> dict:
         r = requests.get(VOIAPIZONEURL, {"lat": lat, "lng": lon}, headers={"x-access-token": self.app_key})
@@ -76,5 +73,4 @@ class VoiService(Service):
 
 if __name__ == "__main__":
     voi_service = VoiService("VOIAPIAUTHTOCKEN")
-    cs = ClusterService()
-    voi_service.get_vehicles(41.9028, 12.4964, 500, cs)
+    voi_service.get_vehicles(41.9028, 12.4964, 500)
