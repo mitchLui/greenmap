@@ -1,10 +1,6 @@
 from service import Service
-import time
-import os
 import requests
 from clustering import g_cluster
-import math
-from apscheduler.schedulers.background import BackgroundScheduler
 import haversine as hs  # used for distance calculations between coordinates
 
 

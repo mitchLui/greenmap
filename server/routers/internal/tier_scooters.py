@@ -1,7 +1,6 @@
 from service import Service
-from clustering import g_cluser
+from clustering import g_cluster
 import requests
-import json
 
 TIER_URL: str = "https://platform.tier-services.io/v1/vehicle?"
 TIER_PRICING_URL: str = "https://platform.tier-services.io/v2/pricing?"
