@@ -1,5 +1,6 @@
-from service import Service
-from voi import VoiService
+#* PRIVATE
+from .service import Service
+from .voi import VoiService
 import requests
 
 PLACES_URL: str = "https://transportapi.com/v3/uk/public_journey.json"

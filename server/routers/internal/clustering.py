@@ -1,3 +1,4 @@
+#* PRIVATE
 import haversine as hs
 import typing
 import math

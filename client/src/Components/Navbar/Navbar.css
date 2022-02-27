@@ -1,0 +1,40 @@
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+header div {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+}
+
+.logo {
+    font-weight: normal;
+}
+.logo-link {
+    color: inherit;
+    text-decoration: none;
+}
+.logo .bold {
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+}
+nav a {
+    color: inherit;
+    text-decoration: none;
+}
+nav a:hover,
+nav a:focus {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 1.5rem 1rem;
+}

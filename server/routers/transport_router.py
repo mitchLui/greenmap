@@ -4,7 +4,6 @@ from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, wait
 from traceback import format_exc
 from loguru import logger
-from sqlalchemy import JSON
 
 from .internal.chargers import ChargingService
 from .internal.voi import VoiService
@@ -21,7 +20,7 @@ router = APIRouter(
 )
 
 public_transport_service = PublicTransportService("TRANSPORTAPIAPPID", "TRANSPORTAPIAPPKEY")
-voi_service = VoiService(api_app_keyname="voi", api_key_keyname="voi")
+voi_service = VoiService("VOIAPIAUTHTOCKEN")
 ev_charger_service = ChargingService("CHARGERAPIAPPKEY")
 santander_cycles_service = SantanderCycles()
 

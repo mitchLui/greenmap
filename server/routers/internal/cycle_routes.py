@@ -1,4 +1,5 @@
-from service import Service
+#* PRIVATE
+from .service import Service
 import requests
 
 CYCLE_JOURNEY_URL: str = "https://transportapi.com/v3/uk/cycle/journey/"
