@@ -10,7 +10,7 @@ export const Result = (recommendations) => {
         {recommendations.routes.routes.map(route => {
             return <div className="route">
                 <div className="time-taken">
-                    {route.time + "min time"}
+                    {Math.round(route.time) + "mins time - " + Math.round(route.dist) + "m"}
                 </div>
                 <div className="emissions">
                     {route.emissions + "g of CO2 produced"}
@@ -23,7 +23,7 @@ export const Result = (recommendations) => {
                     } else if (leg.mode === "train") {
                         return <FontAwesomeIcon icon={faTrainSubway} />
                     } else if (leg.mode === "voi") {
-                        return <svg href="/voi-icon.svg"></svg>
+                        return <img src="/voi-icon.svg" style={{width: "15px", height: "15px"}} />
                     }
                     return <span>{leg.mode}</span>;
                 })}
