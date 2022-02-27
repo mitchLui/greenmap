@@ -1,3 +1,4 @@
+#* PRIVATE
 from service import Service
 import requests
 
