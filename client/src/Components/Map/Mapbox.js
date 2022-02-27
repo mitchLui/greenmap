@@ -8,7 +8,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 export const token = "pk.eyJ1IjoibXNhbG1hbmtoYW4iLCJhIjoiY2wwNDg3aXJiMGIyYzNpb2czMWxkd2JzbyJ9.7fFFZSy33ckDNMdUlfUWGA";
 
 export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, centre, setCentre}) => {
-    const APIURL = "https://909f-2001-630-e4-4220-55c7-d61c-6788-9101.ngrok.io/";
+    const APIURL = "http://localhost:5001/";
 
     const [zoom, setZoom] = useState(15);
     const [height, setHeight] = useState(document.documentElement.clientHeight);

@@ -10,7 +10,10 @@ export const Result = (recommendations) => {
         {recommendations.routes.routes.map(route => {
             return <div className="route">
                 <div className="time-taken">
-                    {Math.round(route.time) + "mins time - " + Math.round(route.dist) + "m"}
+                    {Math.round(route.time + "min time")}
+                </div>
+                <div className="distance">
+                    {Math.round(route.distance + "m distance")}
                 </div>
                 <div className="emissions">
                     {route.emissions + "g of CO2 produced"}

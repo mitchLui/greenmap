@@ -5,7 +5,7 @@ import {Search} from "./Components/Search/Search";
 import {useEffect, useState} from "react";
 import { Weather } from './Components/Weather/Weather';
 
-const weatherApiUrl = "https://909f-2001-630-e4-4220-55c7-d61c-6788-9101.ngrok.io/weather";
+const weatherApiUrl = "http://localhost:5001/weather";
 
 function App() {
     const [searchBarVisibility, setSearchBarVisibility] = useState(false)
