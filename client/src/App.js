@@ -7,9 +7,9 @@ import {useEffect, useState} from "react";
 
 function App() {
     const [searchBarVisibility, setSearchBarVisibility] = useState(false)
-    const [lat, setLat] = useState(0)
-    const [lng, setLng] = useState(0)
-    const [centre, setCentre] = useState([]);
+    const [lat, setLat] = useState(51.4558058)
+    const [lng, setLng] = useState(-2.602799)
+    const [centre, setCentre] = useState([51.4558058, -2.602799]);
 
     const setCoords = (lat, lng) => {
         setLng(lng);
@@ -50,7 +50,7 @@ function App() {
             {
                 searchBarVisibility &&
                 <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
-                        lat={lat} lng={lng}/>
+                        lat={lat} lng={lng} setCentre={setCentre}/>
             }
         </div>
     );

@@ -4,7 +4,7 @@ import {faXmark} from "@fortawesome/free-solid-svg-icons";
 import {token} from "../Map/Mapbox";
 import {useState} from "react";
 
-export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng}) => {
+export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, setCentre}) => {
     const [suggestions, setSuggestions] = useState([]);
     const geocode = (q) => {
         const params = {
@@ -34,7 +34,10 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng}) 
                        onChange={({target: {value}}) => geocode(value)}/>
                 <div className={"suggestions"}>
                     {
-                        suggestions.map((place, key) => <div className={"suggestion"}>{place.name}</div>)
+                        suggestions.map((place, key) => <div className={"suggestion"} onClick={() => {
+                            setCentre([place.coords[1], place.coords[0]]);
+                            setSearchBarVisibility(false);
+                        }}>{place.name}</div>)
                     }
                 </div>
             </form>
