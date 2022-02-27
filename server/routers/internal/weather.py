@@ -1,4 +1,4 @@
-from .service import Service
+from service import Service
 from datetime import datetime
 from typing import Union
 import requests
@@ -34,6 +34,17 @@ class WeatherService(Service):
             }, r.status_code
         else:
             return results, r.status_code
+
+    def recommend_transport(self, long: float, lat: float):
+        weather, ok = self.get_weather(long, lat)
+        if ok != 200:
+            return None
+        t = weather["description"]
+        if t == "Snow" or t == "Extreme":
+            return f"The weather is {t}. Consider taking a Bus or a Train"
+        if t == "Rain":
+            return f"It's raining. Maybe bring a coat and be careful if you are cycling or walking"
+
 
 
 if __name__ == "__main__":
