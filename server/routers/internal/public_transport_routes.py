@@ -1,13 +1,32 @@
 #* PRIVATE
 from service import Service
-from voi import VoiService
 import requests
 
 PLACES_URL: str = "https://transportapi.com/v3/uk/public_journey.json"
-MAXWALKRADIUS: int = 1000
 
-def filter_results(routes):
-    return routes
+def filter_results(res) -> list:
+    journeys: list = []
+    for route in res["routes"]:
+        journey: dict = dict()
+        duration = route["duration"].split(":")
+        journey["time"] = float(duration[0]) * 60 + float(duration[1])
+        journey["dist"] = route["distance"]
+        journey["legs"] = []
+        cumulative_dist = 0
+        for part in route["route_parts"]:
+            leg: dict = dict()
+            leg["dist"] = part["distance"]
+            leg["mode"] = "walk" if part["mode"] == "foot" else part["mode"]
+            leg["path"] = part["coordinates"]
+            leg["dep_time"] = part["departure_datetime"]
+            leg["arr_time"] = part["arrival_datetime"]
+            leg["src"] = part["from_point_name"]
+            leg["dest"] = part["from_point_name"]
+            leg["line"] = part["line_name"]
+            journey["legs"].append(leg)
+        journeys.append(journey)
+    return journeys
+
 
 class PublicTransportRoutingService(Service):
 
