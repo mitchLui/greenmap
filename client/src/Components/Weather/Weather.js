@@ -1,24 +1,14 @@
-import "./Weather.css"
+import "./Weather.css";
 
-const weatherApiUrl = "http://localhost:80/weather";
-
-export const Weather = ({lat, long}) => {
-    
-    const weatherApi = `${weatherApiUrl}?lat=${lat}&long=${long}`;
-
-    const weatherData = fetch(weatherApi, {
-        method: "GET",
-        mode: "cors",
-        headers: {
-            "Allow-Control-Allow-Origin": "*",
-            "Content-Type": "application/json"
-        },
-    }).then(res => res.json()).then(json => console.log(json));
-
+export const Weather = (weather) => {
     return (<div className={"weather"}>
-                <div className={"weather-icon"}>
-                    <img src={weatherData.data.icon_url} alt="weather icon"/>
-                </div>
+                {weather.icon_url !== undefined && <div className="weather-info">
+                    <div className={"weather-icon"}>
+                        <img src={weather.icon_url} alt="weather icon"/>
+                    </div>
+                    <div className="temperature">
+                        {weather.temp}
+                    </div>
+                </div>}
         </div>)
-    
 };

@@ -1,0 +1,12 @@
+.weather-info {
+    position: absolute;
+    bottom: 20px;
+}
+
+.weather-icon {
+    float: left;
+}
+
+.temperature {
+    float: right;
+}
