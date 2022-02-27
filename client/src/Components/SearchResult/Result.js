@@ -10,7 +10,7 @@ export const Result = (recommendations) => {
                 <div className="emissions">
                     {route.emissions + "g of CO2 produced"}
                 </div>
-                {route.legs.map(leg => leg.mode)}
+                    {(route.legs.map(leg => leg.mode))}
                 <br />
             </div>
         })}
