@@ -37,6 +37,8 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, s
                         suggestions.map((place, key) => <div className={"suggestion"} onClick={() => {
                             setCentre([place.coords[1], place.coords[0]]);
                             setSearchBarVisibility(false);
+                            fetch("https://909f-2001-630-e4-4220-55c7-d61c-6788-9101.ngrok.io/navigation/?src_long=-2.6027&src_lat=51.4545&dest_long=-2.6220&dest_lat=51.4637")
+                            .then(res => res.json()).then(j => {setInfo(j.data);});
                         }}>{place.name}</div>)
                     }
                 </div>
