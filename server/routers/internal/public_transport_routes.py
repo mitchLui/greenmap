@@ -25,5 +25,6 @@ class PublicTransportRoutingService(Service):
 
 if __name__ == "__main__":
     transport_service = PublicTransportRoutingService("TRANSPORTAPIAPPID", "TRANSPORTAPIAPPKEY")
-    # for part in transport_service.get_routes(51.449142, -2.581315, 51.504937, -2.562431)["routes"][0]["route_parts"]:
-    #     for p in part[""]
+    for part in transport_service.get_routes(51.449142, -2.581315, 51.504937, -2.562431)["routes"][0]["route_parts"]:
+        for c in part["coordinates"]:
+            print(f'{c[1]},{c[0]},blue,marker,"hi"')

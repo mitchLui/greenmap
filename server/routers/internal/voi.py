@@ -49,7 +49,6 @@ class VoiService(Service):
         for v in vehicles:
             pos.append((v["location"]["lat"], v["location"]["lng"]))
 
-
     def get_zones(self, lat: float, lon: float) -> dict:
         r = requests.get(VOIAPIZONEURL, {"lat": lat, "lng": lon}, headers={"x-access-token": self.app_key})
         if r.status_code != 200:
@@ -61,7 +60,6 @@ class VoiService(Service):
                 return {"zone_id": zone["zone_id"], "start_cost": zone["start_cost"],
                         "minute_cost": zone["minute_cost"]}
         return None
-
 
 
 if __name__ == "__main__":
