@@ -1,12 +1,32 @@
 #* PRIVATE
-from .service import Service
-from .voi import VoiService
+from service import Service
 import requests
 
 PLACES_URL: str = "https://transportapi.com/v3/uk/public_journey.json"
 
-def filter_results(routes):
-    return routes
+def filter_results(res) -> list:
+    journeys: list = []
+    for route in res["routes"]:
+        journey: dict = dict()
+        duration = route["duration"].split(":")
+        journey["time"] = float(duration[0]) * 60 + float(duration[1])
+        journey["dist"] = route["distance"]
+        journey["legs"] = []
+        cumulative_dist = 0
+        for part in route["route_parts"]:
+            leg: dict = dict()
+            leg["dist"] = part["distance"]
+            leg["mode"] = "walk" if part["mode"] == "foot" else part["mode"]
+            leg["path"] = part["coordinates"]
+            leg["dep_time"] = part["departure_datetime"]
+            leg["arr_time"] = part["arrival_datetime"]
+            leg["src"] = part["from_point_name"]
+            leg["dest"] = part["from_point_name"]
+            leg["line"] = part["line_name"]
+            journey["legs"].append(leg)
+        journeys.append(journey)
+    return journeys
+
 
 class PublicTransportRoutingService(Service):
 
@@ -20,27 +40,6 @@ class PublicTransportRoutingService(Service):
         else:
             return None
 
-    def get_routes_voi(self, from_lat: float, from_lon: float, to_lat: float, to_lon: float, voi_service: VoiService):
-        routes = self.get_routes(from_lat, from_lon, to_lat, to_lon)
-        if routes is None:
-            return None
-        newRoutes = []
-        voi_service_cache = {}
-        for route in routes["routes"][:1]:
-            for part in route["route_parts"]:
-                if part["mode"] == "foot":
-                    f = (from_lat, from_lon)
-                    t = (to_lat, to_lon)
-                    if part["from_point_name"] != "Journey Origin":
-                        f = (part["from_point"]["place"]["latitude"], part["from_point"]["place"]["longitude"])
-                    if part["to_point_name"] != "Journey Destination":
-                        t = (part["to_point"]["place"]["latitude"], part["to_point"]["place"]["longitude"])
-                    print("Hi")
-                    print(part)
-
 
 if __name__ == "__main__":
     transport_service = PublicTransportRoutingService("TRANSPORTAPIAPPID", "TRANSPORTAPIAPPKEY")
-    voi_service = VoiService("VOIAPIAUTHTOCKEN")
-    # print(transport_service.get_routes(51.449142, -2.581315, 51.504937, -2.562431)["routes"])
-    transport_service.get_routes_voi(51.449142, -2.581315, 51.504937, -2.562431, voi_service)
