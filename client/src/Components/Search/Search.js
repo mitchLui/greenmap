@@ -3,9 +3,11 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faXmark} from "@fortawesome/free-solid-svg-icons";
 import {token} from "../Map/Mapbox";
 import {useState} from "react";
+import { Result } from "../SearchResult/Result";
 
 export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng}) => {
     const [suggestions, setSuggestions] = useState([]);
+    const [info, setInfo] = useState(undefined);
     const geocode = (q) => {
         const params = {
             access_token: token,
@@ -21,8 +23,6 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng}) 
         })
     }
 
-    console.log(suggestions)
-
     return (
         <div className={"modal"}>
             <button className={"close"} onClick={() => setSearchBarVisibility(!searchBarVisibility)}>
@@ -34,10 +34,16 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng}) 
                        onChange={({target: {value}}) => geocode(value)}/>
                 <div className={"suggestions"}>
                     {
-                        suggestions.map((place, key) => <div className={"suggestion"}>{place.name}</div>)
+                        suggestions.map((place, key) => <div className={"suggestion"} onClick={() => {
+                            fetch("https://909f-2001-630-e4-4220-55c7-d61c-6788-9101.ngrok.io/navigation/?src_long=-2.6027&src_lat=51.4545&dest_long=-2.6220&dest_lat=51.4637")
+                            .then(res => res.json()).then(j => {setInfo(j.data)})
+                        }}>{place.name}</div>)
                     }
                 </div>
             </form>
+            <div className="stuff">
+                {info !== undefined && Result(info)}
+            </div>
         </div>
     )
 }

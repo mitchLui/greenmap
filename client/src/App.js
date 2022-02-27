@@ -5,11 +5,25 @@ import {Search} from "./Components/Search/Search";
 import {useEffect, useState} from "react";
 import { Weather } from './Components/Weather/Weather';
 
+const weatherApiUrl = "https://909f-2001-630-e4-4220-55c7-d61c-6788-9101.ngrok.io/weather";
+
 function App() {
     const [searchBarVisibility, setSearchBarVisibility] = useState(false)
     const [lat, setLat] = useState(0)
     const [lng, setLng] = useState(0)
     const [centre, setCentre] = useState([]);
+    const [weather, setWeather] = useState({icon_url: undefined});
+
+    const weatherApi = `${weatherApiUrl}?lat=${52}&long=${-2}`;
+
+    fetch(weatherApi, {
+        method: "GET",
+        mode: "no-cors",
+        headers: {
+            "Allow-Control-Allow-Origin": "*",
+            "Content-Type": "application/json"
+        },
+    }).then(res => res.json()).then(json => {setWeather(json.data)}).catch(err => {});
 
     const setCoords = (lat, lng) => {
         setLng(lng);
@@ -46,7 +60,7 @@ function App() {
             <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility} lat={lat}
                     setLat={setLat} lng={lng} setLng={lng} centre={centre} setCentre={setCentre}/>
             <Clock />
-            <Weather />
+            {Weather(weather)}
             {
                 searchBarVisibility &&
                 <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}

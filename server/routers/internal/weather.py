@@ -49,4 +49,4 @@ class WeatherService(Service):
 
 if __name__ == "__main__":
     weather_service = WeatherService(api_app_keyname="weather", api_key_keyname="OPENWEATHERAPIKEY")
-    print(weather_service.get_weather(long=-122.08, lat=37.39))
+    print(weather_service.get_weather(long=51.45, lat=-2.001))
