@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor, wait
 import haversine as hs
 import json
 
@@ -26,8 +27,12 @@ class RecommendedRoutesService:
     # Given current coordinates and destination coordinates returns a list of routes with emission and time scores
     def get_recommend_routes(self, src_lat: float, src_lng: float, dest_lat: float, dest_lng: float):
         recommendations = {"routes": []}
-        recommendations["routes"] = self.find_cycling_vehicles(src_lat, src_lng, dest_lat, dest_lng)
-        recommendations["routes"].extend(self.find_public_transport(src_lat, src_lng, dest_lat, dest_lng))
+        futures = []
+        with ThreadPoolExecutor(max_workers=2) as e:
+            futures.append(e.submit(self.find_cycling_vehicles, src_lat, src_lng, dest_lat, dest_lng))
+            futures.append(e.submit(self.find_public_transport, src_lat, src_lng, dest_lat, dest_lng))
+        recommendations["routes"].extend(futures[0].result()) 
+        recommendations["routes"].extend(futures[1].result())
         return recommendations
 
     # Find journeys using Cycles, Vois and Tiers
