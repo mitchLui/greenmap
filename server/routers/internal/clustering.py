@@ -3,7 +3,7 @@ import haversine as hs
 import typing
 import math
 
-DISTANCE_LIMIT: float = 10  # meters
+DISTANCE_LIMIT: float = 15  # meters
 
 """
 { groups: [
