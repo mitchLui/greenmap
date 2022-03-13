@@ -29,7 +29,6 @@ const formatEmission = (emissions) => {
     } else {
         return (Math.round(emissions / 10)/100) + "kg of CO2 produced"
     }
-    return emissions
 }
 
 const getRouteTime = (route) => {
@@ -40,6 +39,9 @@ const getRouteTime = (route) => {
 }
 
 export const Result = (recommendations) => {
+    if (!("routes" in recommendations && recommendations.routes.length > 0)) {
+        return <div className="result">No results</div>;
+    }
     return <div className="result">
         {recommendations.routes.map((route, key) => {
             console.log(route);
@@ -48,7 +50,7 @@ export const Result = (recommendations) => {
                     {getRouteTime(route)}
                 </div>
                 <div className="distance">
-                    {Math.round(route.dist) + "m distance"}
+                    {formatDistance(route.dist)}
                 </div>
                 <div className="emissions">
                     {formatEmission(route.emissions)}
@@ -66,7 +68,7 @@ export const Result = (recommendations) => {
                     return <span key={lk}>{leg.mode}</span>;
                 }).reduce((prev, curr) => [prev, <FontAwesomeIcon className="routeArrowIcon" icon={faArrowRightLong}/>, curr])}
                 <span className="time-taken">
-                    {Math.round(route.time) + "min time"}
+                    {formatTime(route.time)}
                 </span>
                 <br />
             </div>
