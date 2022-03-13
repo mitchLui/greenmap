@@ -12,7 +12,7 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, s
     const geocode = (q) => {
         const params = {
             access_token: token,
-            proximity: `${lng},${lng}`,
+            proximity: `${lat},${lng}`,
         }
         const url = new URL(`https://api.mapbox.com/geocoding/v5/mapbox.places/${q}.json`);
         url.search = new URLSearchParams(params).toString();
