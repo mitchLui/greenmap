@@ -25,10 +25,12 @@ def cache():
 @router.get("/", response_model=NavigationResponse)
 async def get_navigation(request: NavigationRequest = Depends()):
     try:
+        #TODO REMOVE AT SOME POINT
         if request.src_long==-2.6027 and request.src_lat==51.4545 and request.dest_long==-2.6220 and request.dest_lat==51.4637:
             recommended_routes = cache()
         else:
             recommended_routes = rrs.get_recommend_routes(request.src_lat, request.src_long, request.dest_lat, request.dest_long)
+        #TODO END
         return JSONResponse({
             "data": recommended_routes,
             "message": f"Got data for directions from {request.src_lat}, {request.src_long} to {request.dest_lat}, {request.dest_long}",
