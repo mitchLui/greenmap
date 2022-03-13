@@ -22,6 +22,8 @@ class Leg(BaseModel):
     line: Optional[str] = None
 
 class Route(BaseModel):
+    dep_time: str
+    arr_time: str
     time: float
     emissions: float
     distance: float

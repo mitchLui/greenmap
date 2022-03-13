@@ -1,6 +1,8 @@
 from concurrent.futures import ThreadPoolExecutor, wait
+import datetime
 import haversine as hs
 import json
+import pytz
 
 from .cycle_routes import CycleRoutesService
 from .santander_cycles import SantanderCycles
@@ -110,9 +112,25 @@ class RecommendedRoutesService:
         dist_travelled += float(res["distance"])
         legs.append(leg)
         time = self.timing_service.get_travelling_time(dist_travelled)
-        route = {"time": time, "emissions": carbon, "dist": dist_travelled, "legs": legs}
-
+        dep_time = self.get_dep_time(legs)
+        arr_time = self.get_arr_time(time, legs)
+        route = {"dep_time": dep_time, "arr_time":  arr_time, "time": time, "emissions": carbon, "dist": dist_travelled, "legs": legs}
         return route
+
+    def get_dep_time(self, legs: list):
+        if legs:
+            if legs[0].get("dep_time") is not None:
+                dep_time = legs[0]["dep_time"]
+                return dep_time
+        return datetime.datetime.now().astimezone(tz=pytz.timezone("Europe/London")).isoformat()
+
+    def get_arr_time(self, time: str, legs: list):
+        if legs:
+            if legs[0].get("arr_time") is not None:
+                arr_time = legs[-1]["arr_time"]
+                return arr_time
+        arr_time = datetime.datetime.now().astimezone(tz=pytz.timezone("Europe/London")) + datetime.timedelta(minutes=float(time))
+        return arr_time.isoformat()
 
     # Sorts the list by location and returns the closest location
     def closest_location(self, lat: float, lng: float, locations: list):
