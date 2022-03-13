@@ -41,4 +41,4 @@ async def get_navigation(request: NavigationRequest = Depends()):
             "data": {},
             "message": f"Failed to get data - {e}",
             "success": False
-        }, 200)
+        }, 500)
