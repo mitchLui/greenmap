@@ -1,6 +1,6 @@
 .result {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 30px;
 }
 
@@ -11,4 +11,16 @@
     opacity: 100%;
     border: 1px solid #fff;
     border-spacing: 2px;
+}
+
+.routeArrowIcon {
+    padding: 0px 10px;
+}
+
+.time-taken {
+    padding-left: 15px;
+}
+
+.route-time {
+    font-size: 2em;
 }
