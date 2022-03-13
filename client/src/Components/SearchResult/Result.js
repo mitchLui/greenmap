@@ -1,8 +1,6 @@
 import "./Result.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBus, faP } from "@fortawesome/free-solid-svg-icons";
-import { faPersonWalking } from "@fortawesome/free-solid-svg-icons";
-import { faTrainSubway } from "@fortawesome/free-solid-svg-icons";
+import { faBus, faPersonWalking, faTrainSubway, faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
 const formatTime = (time) => {
     time = Math.round(time)
@@ -34,31 +32,42 @@ const formatEmission = (emissions) => {
     return emissions
 }
 
+const getRouteTime = (route) => {
+    if ("arr_time" in route && "dep_time" in route) {
+        return route.dep_time.slice(11,16) + " - " + route.arr_time.slice(11,16);
+    }
+    return "12:00 - 14:00";
+}
+
 export const Result = (recommendations) => {
     return <div className="result">
-        {recommendations.routes.map(route => {
-            return <div className="route">
-                <div className="time-taken">
-                    {formatTime(route.time)}
+        {recommendations.routes.map((route, key) => {
+            console.log(route);
+            return <div className="route" key={key} onClick={() => {console.log(route)}}>
+                <div className="route-time">
+                    {getRouteTime(route)}
                 </div>
                 <div className="distance">
-                    {formatDistance(route.dist)}
+                    {Math.round(route.dist) + "m distance"}
                 </div>
                 <div className="emissions">
                     {formatEmission(route.emissions)}
                 </div>
-                {route.legs.map(leg => {
+                {route.legs.map((leg, lk) => {
                     if (leg.mode === "bus") {
-                        return <FontAwesomeIcon icon={faBus} />
+                        return <FontAwesomeIcon icon={faBus} key={lk} />
                     } else if (leg.mode === "walk") {
-                        return <FontAwesomeIcon icon={faPersonWalking} />
+                        return <FontAwesomeIcon icon={faPersonWalking} key={lk} />
                     } else if (leg.mode === "train") {
-                        return <FontAwesomeIcon icon={faTrainSubway} />
+                        return <FontAwesomeIcon icon={faTrainSubway} key={lk} />
                     } else if (leg.mode === "voi") {
-                        return <img src="/voi-icon.svg" style={{width: "15px", height: "15px"}} />
+                        return <img src="/voi-icon.svg" alt="voi" style={{width: "15px", height: "15px"}} key={lk} />
                     }
-                    return <span>{leg.mode}</span>;
-                })}
+                    return <span key={lk}>{leg.mode}</span>;
+                }).reduce((prev, curr) => [prev, <FontAwesomeIcon className="routeArrowIcon" icon={faArrowRightLong}/>, curr])}
+                <span className="time-taken">
+                    {Math.round(route.time) + "min time"}
+                </span>
                 <br />
             </div>
         })}
