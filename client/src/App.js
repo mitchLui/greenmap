@@ -22,7 +22,7 @@ function App() {
         const id = navigator.geolocation.watchPosition(
             (pos) => {
                 setCoords(pos.coords.latitude, pos.coords.longitude);
-                if (centre.length === 0) {
+                if (centre.length === 0 || pos.coords.latitude !== centre[0] || pos.coords.latitude !== centre[1]) {
                     setCentre([pos.coords.latitude, pos.coords.longitude])
                 }
             },
