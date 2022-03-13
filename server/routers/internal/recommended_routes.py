@@ -76,7 +76,6 @@ class RecommendedRoutesService:
         dest_voi = self.closest_location(dest_lat, dest_lng, dest_vois)
         if src_voi is not None and dest_voi is not None:
             res = self.filter_by_dist(src_lat, src_lng, dest_lat, dest_lng, src_voi, dest_voi, "voi", dist)
-            print(res)
             if len(res) > 0:
                 self.get_cost(res["legs"], float(res["time"]))
                 routes.append(res)
