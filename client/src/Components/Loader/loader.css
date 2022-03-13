@@ -1,0 +1,19 @@
+.loader {
+    border: 0.3rem solid #ffffff;
+    border-radius: 50%;
+    border-bottom: 0.3rem solid transparent;
+    width: 3rem;
+    height: 3rem;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
