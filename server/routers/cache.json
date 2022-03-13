@@ -1,6 +1,4 @@
-{
-  "data": {
-    "routes": [
+{"routes": [
       {
         "dep_time": "2022-03-13T13:48:27.926478+00:00",
         "arr_time": "2022-03-13T13:56:27.308133+00:00",
@@ -2612,7 +2610,4 @@
         "emissions": 120.86
       }
     ]
-  },
-  "message": "Got data for directions from 51.4545, -2.6027 to 51.4637, -2.622",
-  "success": true
-}
+  }
