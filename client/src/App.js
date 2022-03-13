@@ -5,7 +5,6 @@ import {Search} from "./Components/Search/Search";
 import {useEffect, useState} from "react";
 import { Weather } from './Components/Weather/Weather';
 
-const weatherApiUrl = "http://localhost:5001/weather";
 
 function App() {
     const [searchBarVisibility, setSearchBarVisibility] = useState(false)
@@ -13,18 +12,6 @@ function App() {
     const [lat, setLat] = useState(51.4558058);
     const [lng, setLng] = useState(-2.602799);
     const [centre, setCentre] = useState([51.4558058, -2.602799]);
-    const weatherApi = `${weatherApiUrl}?lat=${52}&long=${-2}`;
-
-    useEffect(() => {
-        fetch(weatherApi, {
-            method: "GET",
-            mode: "no-cors",
-            headers: {
-                "Allow-Control-Allow-Origin": "*",
-                "Content-Type": "application/json"
-            },
-        }).then(res => res.json()).then(json => {setWeather(json.data)}).catch(err => {});
-    }, []);
 
     const setCoords = (lat, lng) => {
         setLng(lng);
@@ -61,7 +48,7 @@ function App() {
             <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility} lat={lat}
                     setLat={setLat} lng={lng} setLng={lng} centre={centre} setCentre={setCentre}/>
             <Clock />
-            {Weather(weather)}
+            {<Weather lat={lat} long={lng} />}
             {
                 searchBarVisibility &&
                 <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}

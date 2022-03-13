@@ -5,10 +5,10 @@ import {faMagnifyingGlass, faBus, faTrain, faChargingStation, faBicycle} from "@
 import "./map.css";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-export const token = "pk.eyJ1IjoibXNhbG1hbmtoYW4iLCJhIjoiY2wwNDg3aXJiMGIyYzNpb2czMWxkd2JzbyJ9.7fFFZSy33ckDNMdUlfUWGA";
+export const token = process.env.REACT_APP_MAPBOX_API_TOKEN;
 
 export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, centre, setCentre}) => {
-    const APIURL = "https://eb4a-82-37-67-117.ngrok.io";
+    const API_URL = process.env.REACT_APP_BACKEND_URL;
 
     const [zoom, setZoom] = useState(15);
     const [height, setHeight] = useState(document.documentElement.clientHeight);
@@ -34,7 +34,7 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
                 long: centre[1],
                 radius: zoom * 10
             },
-            url = new URL(APIURL + "transport/");
+            url = new URL(API_URL + "transport/");
 
         url.search = new URLSearchParams(params).toString();
         fetch(url)

@@ -4,12 +4,12 @@ from typing import List, Union
 class CarbonOffsetCalculator:
 
     def __init__(self) -> None:
-        #carbon emitted per km
+        # carbon emitted per km
         self.carbon_emissions = {
             "scooter": 0.11,
             "bus": 0.89,
             "train": 0.035,
-            "ev": 0.06
+            "ev": 33
         }
 
 

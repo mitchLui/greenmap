@@ -1,12 +1,24 @@
 .weather-info {
     position: absolute;
-    bottom: 20px;
+    width: 6rem;
+    height: 6rem;
+    bottom: 2rem;
+    left: 2rem;
+    background: black;
 }
 
 .weather-icon {
-    float: left;
+    display: block;
+    margin: 0 auto;
+    width: 3.5em;
 }
 
-.temperature {
-    float: right;
+.weather-icon img {
+    width: 100%;
+    height: auto;
+}
+
+.weather-temp {
+    display: block;
+    text-align: center;
 }
