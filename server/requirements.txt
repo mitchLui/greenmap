@@ -8,3 +8,4 @@ typing
 haversine
 xmltodict
 loguru
+pytz
