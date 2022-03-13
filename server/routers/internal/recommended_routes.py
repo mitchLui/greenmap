@@ -1,5 +1,6 @@
 from concurrent.futures import ThreadPoolExecutor, wait
 import datetime
+from traceback import format_exc
 import haversine as hs
 import json
 import pytz
@@ -152,10 +153,15 @@ class RecommendedRoutesService:
 
 
     def find_public_transport(self, src_lat: float, src_lng: float, dest_lat: float, dest_lng: float) -> list:
-        routes = self.public_transport.get_routes(src_lat, src_lng, dest_lat, dest_lng)
-        for route in routes:
-            route["emissions"] = self.carbon_service.calculate_carbon_offset(float(route["dist"]), "train")
-        return routes
+        try:
+            routes = self.public_transport.get_routes(src_lat, src_lng, dest_lat, dest_lng)
+            for route in routes:
+                route["dep_time"] = self.get_dep_time(route["legs"])
+                route["arr_time"] = self.get_arr_time(route["time"], route["legs"])
+                route["emissions"] = self.carbon_service.calculate_carbon_offset(float(route["dist"]), "train")
+            return routes
+        except Exception as e:
+            print(format_exc())
 
 
 if __name__ == "__main__":
