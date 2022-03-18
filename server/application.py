@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.wsgi import WSGIMiddleware
 from fastapi.responses import JSONResponse
 from routers import weather_router
 from routers import transport_router
@@ -27,6 +28,8 @@ app.include_router(navigation_router.router)
 @app.get("/")
 def app_root() -> JSONResponse:
     return JSONResponse(content={"message": "app is running"}, status_code=200)
+
+app.mount("/v1", WSGIMiddleware(app))
 
 if __name__ == "__main__":
     uvicorn.run("application:app", host="0.0.0.0", port=80, reload=True)
