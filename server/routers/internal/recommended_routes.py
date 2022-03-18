@@ -1,6 +1,7 @@
 from concurrent.futures import ThreadPoolExecutor, wait
 import datetime
 from traceback import format_exc
+from typing import List
 import haversine as hs
 import json
 import pytz
@@ -93,7 +94,7 @@ class RecommendedRoutesService:
                        mode: str, orig_dist: float) -> dict:
 
         dist_travelled: float = 0
-        legs: list[dict] = []
+        legs: List[dict] = []
         res = self.cycle_routes_service.get_route(src_lat, src_lng, start["lat"], start["long"])
         leg: dict = {"mode": "walk", "dist": res["distance"], "path": res["path"], "cost": 0}
         dist_travelled += float(res["distance"])
@@ -142,7 +143,7 @@ class RecommendedRoutesService:
             return None
 
     # Get cost of journey given time and mode of transport
-    def get_cost(self, legs: list[dict], time: float) -> float:
+    def get_cost(self, legs: List[dict], time: float) -> float:
         for leg in legs:
             if leg["mode"] == "cycle":
                 leg["cost"] = (time/30) * 2.00

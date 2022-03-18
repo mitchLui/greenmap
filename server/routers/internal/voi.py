@@ -1,5 +1,6 @@
 from .service import Service
 from .clustering import g_cluster
+from typing import Dict
 import haversine as hs  # used for distance calculations between coordinates
 import requests
 
@@ -10,7 +11,7 @@ VOIAPIVEHICLES = "https://api.voiapp.io/v2/rides/vehicles"
 
 #TODO
 
-def get_carbon_information(route: dict) -> dict[str, int]:
+def get_carbon_information(route: dict) -> Dict[str, int]:
     results = {}
     for part in route["route_parts"]:
         results[part["mode"]] = results.get(part["mode"], 0) + part["distance"]

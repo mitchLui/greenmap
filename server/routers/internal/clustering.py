@@ -1,6 +1,6 @@
 #* PRIVATE
 import haversine as hs
-import typing
+from typing import Optional, List
 import math
 
 DISTANCE_LIMIT: float = 15  # meters
@@ -26,7 +26,7 @@ def update_group(group: dict, new_vehicle: dict) -> None:
     group["vehicles"].append(new_vehicle)
 
 
-def find_closest_group(lat: float, lng: float, groups: list[dict]) -> typing.Optional[dict]:
+def find_closest_group(lat: float, lng: float, groups: List[dict]) -> Optional[dict]:
     closest_group: dict = None
     min_dist: float = math.inf
     for group in groups:
@@ -38,8 +38,8 @@ def find_closest_group(lat: float, lng: float, groups: list[dict]) -> typing.Opt
     return closest_group
 
 # Proprietary novel super efficient clustering algorithm
-def g_cluster(vehicles: list[dict]):
-    groups: list[dict] = []
+def g_cluster(vehicles: List[dict]):
+    groups: List[dict] = []
     for vehicle in vehicles:
         group = find_closest_group(vehicle["lat"], vehicle["long"], groups)
         if group is not None:
