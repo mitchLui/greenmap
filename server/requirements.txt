@@ -9,3 +9,4 @@ haversine
 xmltodict
 loguru
 pytz
+a2wsgi
