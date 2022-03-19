@@ -3,6 +3,8 @@ import xmltodict  # convert xml to json
 import json
 import haversine as hs  # used for distance calculations between coordinates
 
+from typing import List
+
 SANTANDER_URL = "https://tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml"
 COST_PER_HALF_AN_HOUR = "2.00"
 
@@ -34,7 +36,7 @@ class SantanderCycles():
         stations = sorted(stations, key=lambda k: k["distance"])
         return stations
 
-    def filter_information(self, stations: list[dict]):
+    def filter_information(self, stations: List[dict]):
         for station in stations:
             station.pop("id")
             station.pop("terminalName")

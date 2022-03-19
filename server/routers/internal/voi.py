@@ -1,7 +1,9 @@
 from .service import Service
-from .clustering import g_cluster
+from .clustering import oof_cluster
+from typing import Dict
 import haversine as hs  # used for distance calculations between coordinates
 import requests
+import json
 
 
 VOIAPIUPDATEURL = "https://api.voiapp.io/v1/auth/session"
@@ -10,7 +12,7 @@ VOIAPIVEHICLES = "https://api.voiapp.io/v2/rides/vehicles"
 
 #TODO
 
-def get_carbon_information(route: dict) -> dict[str, int]:
+def get_carbon_information(route: dict) -> Dict[str, int]:
     results = {}
     for part in route["route_parts"]:
         results[part["mode"]] = results.get(part["mode"], 0) + part["distance"]
@@ -54,7 +56,7 @@ class VoiService(Service):
             vLong = vehicle["location"]["lng"]
             if hs.haversine((lat, long), (vLat, vLong), unit=hs.Unit.METERS) < radius:
                 inRange.append({"reg": vehicle["short"], "battery": vehicle["battery"], "lat": vLat, "long": vLong})
-        return g_cluster(inRange)
+        return oof_cluster(inRange)
 
     def get_zones(self, lat: float, lon: float) -> dict:
         r = requests.get(VOIAPIZONEURL, {"lat": lat, "lng": lon}, headers={"x-access-token": self.app_key})
@@ -71,4 +73,4 @@ class VoiService(Service):
 
 if __name__ == "__main__":
     voi_service = VoiService("VOIAPIAUTHTOCKEN")
-    print(voi_service.get_vehicles(41.9028, 12.4964, 500))
+    print(json.dumps(voi_service.get_vehicles(51.461320, -2.599100, 500)))

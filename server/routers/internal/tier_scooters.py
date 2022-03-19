@@ -1,5 +1,5 @@
 from .service import Service
-from .clustering import g_cluster
+from .clustering import oof_cluster
 import requests
 
 TIER_URL: str = "https://platform.tier-services.io/v1/vehicle?"
@@ -21,7 +21,7 @@ class TierScooterService(Service):
         if r.status_code == 200:
             data = r.json()["data"]
             scooters = self.filter_data(data)
-            scooter_groups = g_cluster(scooters)
+            scooter_groups = oof_cluster(scooters)
             return scooter_groups
         else:
             return []
@@ -59,5 +59,5 @@ class TierScooterService(Service):
 if __name__ == "__main__":
     scooter_service = TierScooterService("", "TIERAPIKEY")
     scooters = scooter_service.get_scooters(51.5160, -0.1749, 1500)
-    groups = g_cluster(scooters)
+    groups = oof_cluster(scooters)
     print(groups)
