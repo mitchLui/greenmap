@@ -6,7 +6,8 @@ export const Weather = ({lat, long}) => {
 
     useEffect(async () => {
             const hour = 60 * 60 * 1000;
-            if (!weather || (weather.time - Date.now()) > hour) {
+            const shouldFetch = (weather===null) || (Date.now() - weather.time) > hour;
+            if (shouldFetch) {
                 const data = await getWeatherData(lat, long);
                 setWeather({time: Date.now(), data})
             }
@@ -38,5 +39,5 @@ const getWeatherData = (lat, long) => {
         url = new URL(process.env.REACT_APP_BACKEND_URL + "weather");
 
     url.search = new URLSearchParams(params).toString();
-    return fetch(url).then(resp => resp.json()).then(({data}) => data)
+    return fetch(url).then(resp => resp.json()).then(({data}) => data).catch(e => console.error(e))
 }
