@@ -4,10 +4,7 @@ from tokenize import group
 import haversine as hs
 from typing import Optional, List
 from loguru import logger
-import math
 from .unionFind import UnionFind
-import itertools
-import copy
 
 DISTANCE_LIMIT: float = 10  # meters
 
@@ -65,6 +62,10 @@ def create_clusters(groups, regVeh):
         n = len(g)
         veh = []
         for reg in g:
+            if reg not in regVeh:
+                print(reg)
+                print(regVeh)
+                print("Broken!!!!")
             v = regVeh[reg]
             sLat += v["lat"]
             sLong += v["long"]
@@ -73,7 +74,6 @@ def create_clusters(groups, regVeh):
     return res
 
 def oof_cluster(vehicles: List[dict]):
-    vehicles = copy.deepcopy(vehicles)
     regVeh = {}
     uf = UnionFind(map(lambda v: v["reg"], vehicles))
     for i, v1 in enumerate(vehicles):
