@@ -56,22 +56,29 @@ DISTANCE_LIMIT: float = 10  # meters
 def vehicleDistance(v1, v2):
     return  hs.haversine((v1["lat"], v1["long"]), (v2["lat"], v2["long"]), unit=hs.Unit.METERS)
 
-def create_cluster(vehicles: List[dict]) -> dict:
-    n = len(vehicles)
-    avgLat = sum(v["lat"] for v in vehicles) / n
-    avgLong = sum(v["long"] for v in vehicles) / n
-    return {"lat": avgLat, "long": avgLong, "vehicles": vehicles}
+def create_clusters(groups, regVeh):
+    res = []
+    for g in groups:
+        sLat = 0
+        sLong = 0
+        n = len(g)
+        veh = []
+        for reg in g:
+            v = regVeh[reg]
+            sLat += v["lat"]
+            sLong += v["long"]
+            veh.append(v)
+        res.append({"lat": sLat / n, "long": sLong / n, "vehicles": veh})
+    return res
 
 def oof_cluster(vehicles: List[dict]):
-    inverse = {}
+    regVeh = {}
     uf = UnionFind(map(lambda v: v["reg"], vehicles))
     for i, v1 in enumerate(vehicles):
-        inverse[v1["reg"]] = v1
+        regVeh[v1["reg"]] = v1
         for j in range(i + 1, len(vehicles)):
             v2 = vehicles[j]
             if vehicleDistance(v1, v2) < DISTANCE_LIMIT:
                 uf.union(v1["reg"], v2["reg"])
-    logger.info(inverse)
-    groups = list(map(lambda g: list(map(lambda reg: inverse.get(reg), g)), uf.getGroups()))
-    return list(map(create_cluster, groups))
+    return create_clusters(uf.getGroups(), regVeh)
     
