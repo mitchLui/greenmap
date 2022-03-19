@@ -3,6 +3,7 @@ from operator import invert
 from tokenize import group
 import haversine as hs
 from typing import Optional, List
+from loguru import logger
 import math
 from .unionFind import UnionFind
 import itertools
@@ -70,6 +71,7 @@ def oof_cluster(vehicles: List[dict]):
             v2 = vehicles[j]
             if vehicleDistance(v1, v2) < DISTANCE_LIMIT:
                 uf.union(v1["reg"], v2["reg"])
-    groups = list(map(lambda g: list(map(lambda reg: inverse[reg], g)), uf.getGroups()))
+    logger.info(inverse)
+    groups = list(map(lambda g: list(map(lambda reg: inverse.get(reg), g)), uf.getGroups()))
     return list(map(create_cluster, groups))
     
