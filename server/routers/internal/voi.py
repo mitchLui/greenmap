@@ -73,4 +73,4 @@ class VoiService(Service):
 
 if __name__ == "__main__":
     voi_service = VoiService("VOIAPIAUTHTOCKEN")
-    print(json.dumps(voi_service.get_vehicles(51.461320, -2.599100, 500)))
+    print(json.dumps(voi_service.get_vehicles(51.4606861, -2.598401, 150)))

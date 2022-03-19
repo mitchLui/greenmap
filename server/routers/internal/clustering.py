@@ -62,10 +62,6 @@ def create_clusters(groups, regVeh):
         n = len(g)
         veh = []
         for reg in g:
-            if reg not in regVeh:
-                print(reg)
-                print(regVeh)
-                print("Broken!!!!")
             v = regVeh[reg]
             sLat += v["lat"]
             sLong += v["long"]
@@ -83,4 +79,3 @@ def oof_cluster(vehicles: List[dict]):
             if vehicleDistance(v1, v2) < DISTANCE_LIMIT:
                 uf.union(v1["reg"], v2["reg"])
     return create_clusters(uf.getGroups(), regVeh)
-    

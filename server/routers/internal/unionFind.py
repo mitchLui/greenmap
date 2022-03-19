@@ -3,6 +3,7 @@ class UnionFind:
     tree = {}
 
     def __init__(self, stuff):
+        self.tree = {}
         for thing in stuff:
             self.tree[thing] = thing
 
