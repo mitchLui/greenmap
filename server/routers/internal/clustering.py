@@ -7,6 +7,7 @@ from loguru import logger
 import math
 from .unionFind import UnionFind
 import itertools
+import copy
 
 DISTANCE_LIMIT: float = 10  # meters
 
@@ -72,6 +73,7 @@ def create_clusters(groups, regVeh):
     return res
 
 def oof_cluster(vehicles: List[dict]):
+    vehicles = copy.deepcopy(vehicles)
     regVeh = {}
     uf = UnionFind(map(lambda v: v["reg"], vehicles))
     for i, v1 in enumerate(vehicles):
