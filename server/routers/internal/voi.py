@@ -1,5 +1,5 @@
-from service import Service
-from clustering import oof_cluster
+from .service import Service
+from .clustering import oof_cluster
 from typing import Dict
 import haversine as hs  # used for distance calculations between coordinates
 import requests

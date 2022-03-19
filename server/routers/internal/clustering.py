@@ -4,7 +4,7 @@ from tokenize import group
 import haversine as hs
 from typing import Optional, List
 import math
-from unionFind import UnionFind
+from .unionFind import UnionFind
 import itertools
 
 DISTANCE_LIMIT: float = 10  # meters
