@@ -5,7 +5,7 @@ import {token} from "../Map/Mapbox";
 import {useState} from "react";
 import { Result } from "../SearchResult/Result";
 
-export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, setCentre}) => {
+export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, setCentre, setRoute}) => {
     const [suggestions, setSuggestions] = useState([]);
     const [info, setInfo] = useState(undefined);
     const [hidden, setHidden] = useState(false);
@@ -47,7 +47,7 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, s
                 </form>
             </div>
             <div className="stuff">
-                {info !== undefined && Result(info)}
+                {info !== undefined && Result(info, setSearchBarVisibility, setRoute)}
             </div>
         </div>
     )
