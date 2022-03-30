@@ -4,11 +4,13 @@ import {Mapbox} from "./Components/Map/Mapbox";
 import {Search} from "./Components/Search/Search";
 import {useEffect, useState} from "react";
 import { Weather } from './Components/Weather/Weather';
+import {Route} from "./Components/Route/Route";
 
 
 function App() {
     const [searchBarVisibility, setSearchBarVisibility] = useState(false)
     const [weather, setWeather] = useState({icon_url: undefined});
+    const [route, setRoute] = useState(null);
     const [lat, setLat] = useState(51.4558058);
     const [lng, setLng] = useState(-2.602799);
     const [centre, setCentre] = useState([51.4558058, -2.602799]);
@@ -52,7 +54,10 @@ function App() {
             {
                 searchBarVisibility &&
                 <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
-                        lat={lat} lng={lng} setCentre={setCentre}/>
+                        lat={lat} lng={lng} setCentre={setCentre} setRoute={setRoute}/>
+            }
+            {
+                route !== null && <Route route={route} setCentre={setCentre}/>
             }
         </div>
     );

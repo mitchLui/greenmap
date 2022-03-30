@@ -38,14 +38,19 @@ const getRouteTime = (route) => {
     return "12:00 - 14:00";
 }
 
-export const Result = (recommendations) => {
+const showRoute = (route, setSearchBarVisibility, setRoute) => {
+    setSearchBarVisibility(false);
+    setRoute(route);
+}
+
+export const Result = (recommendations, setSearchBarVisibility, setRoute) => {
     if (!("routes" in recommendations && recommendations.routes.length > 0)) {
         return <div className="result">No results</div>;
     }
     return <div className="result">
         {recommendations.routes.map((route, key) => {
             console.log(route);
-            return <div className="route" key={key} onClick={() => {console.log(route)}}>
+            return <div className="route" key={key} onClick={() => {showRoute(route, setSearchBarVisibility, setRoute)}}>
                 <div className="route-time">
                     {getRouteTime(route)}
                 </div>
