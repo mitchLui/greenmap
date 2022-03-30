@@ -1,0 +1,27 @@
+name: Deploy Backend to Heroku
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "css-greenmap" #Must be unique in Heroku
+          heroku_email: "mitch@mitchlui.dev"
+          appdir: "server"
+          env: "router/internal/.env"
+          usedocker: true
+        env:
+          HD_OPENWEATHERAPIKEY: ${{secrets.HD_OPENWEATHERAPIKEY}}
+          HD_TRANSPORTAPIAPPID: ${{secrets.HD_TRANSPORTAPIAPPID}}
+          HD_TRANSPORTAPIAPPKEY: ${{secrets.HD_TRANSPORTAPIAPPKEY}}
+          HD_CHARGERAPIAPPKEY: ${{secrets.HD_CHARGERAPIAPPKEY}}
+          HD_VOIAPIAUTHTOCKEN: ${{secrets.HD_VOIAPIAUTHTOCKEN}}
+          HD_TIERAPIKEY: ${{secrets.HD_TIERAPIKEY}}
