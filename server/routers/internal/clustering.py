@@ -56,7 +56,9 @@ def vehicleDistance(v1, v2):
 
 def create_clusters(groups, regVeh):
     res = []
+    logger.warning(regVeh)
     for g in groups:
+        logger.warning(g)
         sLat = 0
         sLong = 0
         n = len(g)
@@ -73,9 +75,12 @@ def oof_cluster(vehicles: List[dict]):
     regVeh = {}
     uf = UnionFind(map(lambda v: v["reg"], vehicles))
     for i, v1 in enumerate(vehicles):
+        logger.warning(v1)
         regVeh[v1["reg"]] = v1
         for j in range(i + 1, len(vehicles)):
             v2 = vehicles[j]
             if vehicleDistance(v1, v2) < DISTANCE_LIMIT:
                 uf.union(v1["reg"], v2["reg"])
     return create_clusters(uf.getGroups(), regVeh)
+
+    
