@@ -1,7 +1,6 @@
 import "./Search.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faXmark} from "@fortawesome/free-solid-svg-icons";
-import {token} from "../Map/Mapbox";
 import {useState} from "react";
 import { Result } from "../SearchResult/Result";
 
@@ -11,7 +10,7 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, s
     const [hidden, setHidden] = useState(false);
     const geocode = (q) => {
         const params = {
-            access_token: token,
+            access_token: process.env.REACT_APP_MAPBOX_API_TOKEN,
             proximity: `${lat},${lng}`,
         }
         const url = new URL(`https://api.mapbox.com/geocoding/v5/mapbox.places/${q}.json`);
@@ -36,18 +35,17 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, s
                         onChange={({target: {value}}) => geocode(value)}/>
                     <div className={"suggestions"}>
                         {
-                            suggestions.map((place, key) => <div className={"suggestion"} onClick={() => {
-                                setCentre([place.coords[1], place.coords[0]]);
-                                setHidden(true);
-                                fetch("https://eb4a-82-37-67-117.ngrok.io/navigation/?src_long=-2.6027&src_lat=51.4545&dest_long=-2.6220&dest_lat=51.4637")
-                                .then(res => res.json()).then(j => {setInfo(j.data);});
+                            suggestions.map((place, key) => <div key={key} className={"suggestion"} onClick={() => {
+                                // setHidden(true);
+                                fetch(`${process.env.REACT_APP_BACKEND_URL}/navigation?src_long=${lng}&src_lat=${lat}&dest_long=${place.coords[1]}&dest_lat=${place.coords[0]}`)
+                                .then(res => res.json()).then(j => {console.log(j); setInfo(j.data);});
                             }}>{place.name}</div>)
                         }
                     </div>
                 </form>
             </div>
             <div className="stuff">
-                {info !== undefined && Result(info, setSearchBarVisibility, setRoute)}
+                {info !== undefined && <Result info={info} setSearchBarVisibility={setSearchBarVisibility} setRoute={setRoute} />}
             </div>
         </div>
     )

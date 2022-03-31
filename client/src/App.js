@@ -1,6 +1,6 @@
 import './App.css';
 import {Navbar} from "./Components/Navbar/Navbar";
-import {Mapbox} from "./Components/Map/Mapbox";
+import {MapboxWindow as Mapbox} from "./Components/Map/Mapbox";
 import {Search} from "./Components/Search/Search";
 import {useEffect, useState} from "react";
 import { Weather } from './Components/Weather/Weather';
@@ -9,32 +9,23 @@ import {Route} from "./Components/Route/Route";
 
 function App() {
     const [searchBarVisibility, setSearchBarVisibility] = useState(false)
-    const [weather, setWeather] = useState({icon_url: undefined});
     const [route, setRoute] = useState(null);
-    const [lat, setLat] = useState(51.4574);
-    const [lng, setLng] = useState(-2.5890);
-    const [centre, setCentre] = useState([51.4574, -2.5890]);
+    const [lat, setLat] = useState(51.4558058);
+    const [lng, setLng] = useState(-2.602799);
+    const [centre, setCentre] = useState([51.4558058, -2.602799]);
 
-    console.log("APP")
-
-    const setCoords = (newLat, newLng) => {
-        if (lat !== newLat || lng !== newLng) {
-            setLng(lng);
-            setLat(lat);
-        }
-    }
-
-    const checkSetCentre = (centre) => {
-
+    const setCoords = (lat, lng) => {
+        setLng(lng);
+        setLat(lat);
     }
 
     useEffect(() => {
         const id = navigator.geolocation.watchPosition(
             (pos) => {
                 setCoords(pos.coords.latitude, pos.coords.longitude);
-                // if (centre.length === 0 || pos.coords.latitude !== centre[0] || pos.coords.longitude !== centre[1]) {
-                //     setCentre([pos.coords.latitude, pos.coords.longitude])
-                // }
+                if (centre.length === 0 || pos.coords.latitude !== centre[0] || pos.coords.latitude !== centre[1]) {
+                    setCentre([pos.coords.latitude, pos.coords.longitude])
+                }
             },
             (err) => {
                 console.log(err);
@@ -55,8 +46,8 @@ function App() {
     return (
         <div className="App">
             <Navbar/>
-            <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility} lat={lat}
-                    setLat={setLat} lng={lng} setLng={lng} centre={centre} setCentre={setCentre}/>
+            <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility} userLat={lat}
+                    setLat={setLat} userLng={lng} setLng={lng} centre={centre} setCentre={setCentre}/>
             <Clock />
             {<Weather lat={lat} long={lng} />}
             {
