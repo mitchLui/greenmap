@@ -13,10 +13,7 @@ const middlePoint = (lat1, lng1, lat2, lng2) => {
     return [toDeg(lng3), toDeg(lat3)];
 }
 
-export const Route = ({r, setCentre}) => {
+export const Route = ({r}) => {
     console.log(r);
-    // setCentre(r.start, r.end)
-    // plot route on map
-    // set zoom level (somehow)
     return <div>Showing Route</div>; // expand with more details
 }

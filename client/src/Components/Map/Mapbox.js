@@ -1,5 +1,5 @@
 import {useRef, useState, useEffect} from "react";
-import {Map, Marker, ScaleControl} from 'react-map-gl';
+import {Map, Marker, ScaleControl, Source, Layer} from 'react-map-gl';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMagnifyingGlass, faBus, faTrain, faChargingStation, faBicycle} from "@fortawesome/free-solid-svg-icons";
 import "./map.css";
@@ -7,7 +7,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 export const token = process.env.REACT_APP_MAPBOX_API_TOKEN;
 
-export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, centre, setCentre}) => {
+export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, centre, setCentre, route}) => {
     const API_URL = process.env.REACT_APP_BACKEND_URL;
 
     const [zoom, setZoom] = useState(15);
@@ -64,6 +64,17 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
     }
 
     const inObj = (obj, key) => Object.keys(obj).includes(key);
+
+    const routeData = route !== null ? route.legs.map(l => l.path).flat(): [];
+
+    const data = {
+        type: "Feature",
+        properties: {},
+        geometry: {
+            type: "LineString",
+            coordinates: routeData
+        }
+    };
 
     return <Map
         scrollZoom={false}
@@ -130,6 +141,21 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
                 </Marker>
             })
         }
+        <Source id="polylineLayer" type="geojson" data={data}>
+          <Layer
+            id="lineLayer"
+            type="line"
+            source="my-data"
+            layout={{
+              "line-join": "round",
+              "line-cap": "round"
+            }}
+            paint={{
+              "line-color": "rgba(3, 170, 238, 0.5)",
+              "line-width": 5
+            }}
+          />
+        </Source>
         <div className={"map-controls"}>
             {/* TODO: make accessible */}
             <button onClick={() => setZoom(zoom + 1)}>+</button>
