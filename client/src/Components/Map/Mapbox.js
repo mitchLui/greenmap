@@ -237,7 +237,7 @@ export const MapboxWindow = ({searchBarVisibility, setSearchBarVisibility, userL
     return (
         <div>
             <div ref={mapContainer} className="map-container"/>
-            {/* <Source id="polylineLayer" type="geojson" data={data}>
+            {map.current && <Source id="polylineLayer" type="geojson" data={data}>
                 <Layer
                     id="lineLayer"
                     type="line"
@@ -251,7 +251,7 @@ export const MapboxWindow = ({searchBarVisibility, setSearchBarVisibility, userL
                     "line-width": 5
                     }}
                 />
-            </Source> */}
+            </Source>}
             <div className={"map-controls"}>
                 {/* TODO: make accessible */}
                 <button onClick={() => map.current.zoomTo(zoom+1)}>+</button>
