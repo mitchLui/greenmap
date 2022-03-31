@@ -44,18 +44,18 @@ function App() {
     })
 
     const Wait_for_app_ready = () => {
-        if ([centre, userLat, userLng].includes(null)) {
+        if ([centre, lat, lng].includes(null)) {
             return <LoaderWindow/>
         } else return (
             <>
                 <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
                               userLat={lat} userLng={lng} centre={centre} setCentre={setCentre}/>
                 <Clock/>
-                <Weather lat={userLat} long={userLng}/>
+                <Weather lat={lat} long={lng}/>
                 {
                     searchBarVisibility &&
                     <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
-                            lat={userLat} lng={userLng} setCentre={setCentre}/>
+                            lat={lat} lng={lng} setCentre={setCentre}/>
                 }
                 {route !== null && <Route route={route} setCentre={setCentre}/>}
             </>
