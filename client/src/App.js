@@ -1,40 +1,28 @@
 import './App.css';
 import {Navbar} from "./Components/Navbar/Navbar";
-import {Mapbox} from "./Components/Map/Mapbox";
+import {MapboxWindow} from "./Components/Map/Mapbox";
 import {Search} from "./Components/Search/Search";
 import {useEffect, useState} from "react";
-import { Weather } from './Components/Weather/Weather';
 import {Route} from "./Components/Route/Route";
+import {Weather} from './Components/Weather/Weather';
+import {LoaderWindow} from "./Components/Loader/Loader";
 
 
 function App() {
     const [searchBarVisibility, setSearchBarVisibility] = useState(false)
-    const [weather, setWeather] = useState({icon_url: undefined});
-    const [route, setRoute] = useState(null);
-    const [lat, setLat] = useState(51.4574);
-    const [lng, setLng] = useState(-2.5890);
-    const [centre, setCentre] = useState([51.4574, -2.5890]);
-
-    console.log("APP")
-
-    const setCoords = (newLat, newLng) => {
-        if (lat !== newLat || lng !== newLng) {
-            setLng(lng);
-            setLat(lat);
-        }
-    }
-
-    const checkSetCentre = (centre) => {
-
-    }
+    const [userLat, setUserLat] = useState(null);
+    const [userLng, setUserLng] = useState(null);
+    const [centre, setCentre] = useState(null);
 
     useEffect(() => {
         const id = navigator.geolocation.watchPosition(
             (pos) => {
-                setCoords(pos.coords.latitude, pos.coords.longitude);
-                // if (centre.length === 0 || pos.coords.latitude !== centre[0] || pos.coords.longitude !== centre[1]) {
-                //     setCentre([pos.coords.latitude, pos.coords.longitude])
-                // }
+                if (centre === null) {
+                    console.log('setting centre')
+                    setCentre([pos.coords.latitude, pos.coords.longitude])
+                }
+                setUserLat(pos.coords.latitude)
+                setUserLng(pos.coords.longitude)
             },
             (err) => {
                 console.log(err);
@@ -51,22 +39,29 @@ function App() {
         }
     })
 
+    const Wait_for_app_ready = () => {
+        if ([centre, userLat, userLng].includes(null)) {
+            return <LoaderWindow/>
+        } else return (
+            <>
+                <MapboxWindow searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
+                              userLat={userLat} userLng={userLng} centre={centre} setCentre={setCentre}/>
+                <Clock/>
+                <Weather lat={userLat} long={userLng}/>
+                {
+                    searchBarVisibility &&
+                    <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
+                            lat={userLat} lng={userLng} setCentre={setCentre}/>
+                }
+                {route !== null && <Route route={route} setCentre={setCentre}/>}
+            </>
+        )
+    }
 
     return (
         <div className="App">
             <Navbar/>
-            <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility} lat={lat}
-                    setLat={setLat} lng={lng} setLng={lng} centre={centre} setCentre={setCentre}/>
-            <Clock />
-            {<Weather lat={lat} long={lng} />}
-            {
-                searchBarVisibility &&
-                <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
-                        lat={lat} lng={lng} setCentre={setCentre} setRoute={setRoute}/>
-            }
-            {
-                route !== null && <Route route={route} setCentre={setCentre}/>
-            }
+            <Wait_for_app_ready/>
         </div>
     );
 }
@@ -92,9 +87,11 @@ const Clock = () => {
             setAmPm(am ? "AM" : "PM");
             setDate(`${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`);
         }, 1000)
+
+        return () => clearTimeout(id);
     })
 
-    return(
+    return (
         <div className={"clock"}>
             <div className={"time"}>
                 <span className={"big"}>{time}</span> {amPm}

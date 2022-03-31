@@ -7,12 +7,15 @@ from .schemas.weather import WeatherRequest, WeatherResponse
 router = APIRouter(
     prefix="/weather",
     tags=["weather"],
-    responses = {
+    responses={
         404: {"description": "Not found"},
-    }   
+    },
 )
 
-weather_service = WeatherService(api_app_keyname = "weather", api_key_keyname="OPENWEATHERAPIKEY")
+weather_service = WeatherService(
+    api_app_keyname="weather", api_key_keyname="OPENWEATHERAPIKEY"
+)
+
 
 @router.get("/", response_model=WeatherResponse)
 async def get_weather(params: WeatherRequest = Depends()):
@@ -23,8 +26,6 @@ async def get_weather(params: WeatherRequest = Depends()):
     else:
         message = data["message"]
         success = False
-    return JSONResponse({
-        "data": data,
-        "message": message,
-        "success": success
-    }, status_code)
+    return JSONResponse(
+        {"data": data, "message": message, "success": success}, status_code
+    )
