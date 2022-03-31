@@ -37,7 +37,7 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, s
                         {
                             suggestions.map((place, key) => <div key={key} className={"suggestion"} onClick={() => {
                                 // setHidden(true);
-                                fetch(`${process.env.REACT_APP_BACKEND_URL}/navigation?src_long=${lng}&src_lat=${lng}.4545&dest_long=${place.coords[1]}dest_lat=${place.coords[0]}`)
+                                fetch(`${process.env.REACT_APP_BACKEND_URL}/navigation?src_long=${lng}&src_lat=${lat}&dest_long=${place.coords[1]}&dest_lat=${place.coords[0]}`)
                                 .then(res => res.json()).then(j => {console.log(j); setInfo(j.data);});
                             }}>{place.name}</div>)
                         }

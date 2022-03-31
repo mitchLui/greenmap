@@ -28,7 +28,7 @@ export const MapboxWindow = ({setSearchBarVisibility, searchBarVisibility, userL
                 long: lng,
                 radius: zoom * 5
             },
-            url = new URL(API_URL + "transport");
+            url = new URL(API_URL + "/transport");
 
         url.search = new URLSearchParams(params).toString();
         fetch(url)
