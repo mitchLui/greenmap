@@ -5,6 +5,7 @@ import {Search} from "./Components/Search/Search";
 import {useEffect, useState} from "react";
 import { Weather } from './Components/Weather/Weather';
 import {Route} from "./Components/Route/Route";
+import {LoaderWindow} from "./Components/Loader/Loader";
 
 
 function App() {
@@ -42,22 +43,29 @@ function App() {
         }
     })
 
+    const Wait_for_app_ready = () => {
+        if ([centre, lat, lng].includes(null)) {
+            return <LoaderWindow/>
+        } else return (
+            <>
+                <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
+                              userLat={lat} userLng={lng} centre={centre} setCentre={setCentre}/>
+                <Clock/>
+                <Weather lat={lat} long={lng}/>
+                {
+                    searchBarVisibility &&
+                    <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
+                            lat={lat} lng={lng} setCentre={setCentre}/>
+                }
+                {route !== null && <Route route={route} setCentre={setCentre}/>}
+            </>
+        )
+    }
 
     return (
         <div className="App">
             <Navbar/>
-            <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility} userLat={lat}
-                    setLat={setLat} userLng={lng} setLng={lng} centre={centre} setCentre={setCentre}/>
-            <Clock />
-            {<Weather lat={lat} long={lng} />}
-            {
-                searchBarVisibility &&
-                <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
-                        lat={lat} lng={lng} setCentre={setCentre} setRoute={setRoute}/>
-            }
-            {
-                route !== null && <Route route={route} setCentre={setCentre}/>
-            }
+            <Wait_for_app_ready/>
         </div>
     );
 }
