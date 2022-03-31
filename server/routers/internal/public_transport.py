@@ -39,3 +39,4 @@ class PublicTransportService(Service):
 if __name__ == "__main__":
     public_transport = PublicTransportService("TRANSPORTAPIAPPID", "TRANSPORTAPIAPPKEY")
     print(public_transport.get_train_stations(51.455795, -2.602835))
+    print(public_transport.get_bus_stations(51.455795, -2.602835))
