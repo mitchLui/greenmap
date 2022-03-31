@@ -8,7 +8,7 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, s
     const [suggestions, setSuggestions] = useState([]);
     const geocode = (q) => {
         const params = {
-            access_token: token,
+            access_token: process.env.REACT_APP_MAPBOX_API_TOKEN,
             proximity: `${lat},${lng}`,
         }
         const url = new URL(`https://api.mapbox.com/geocoding/v5/mapbox.places/${q}.json`);

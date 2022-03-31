@@ -2,11 +2,11 @@ import "./Weather.css";
 import {useEffect, useState} from "react";
 
 export const Weather = ({lat, long}) => {
-    const [weather, setWeather] = useState(null)
+    const [weather, setWeather] = useState({time: null, data: null})
 
     useEffect(async () => {
             const hour = 60 * 60 * 1000;
-            const shouldFetch = (weather===null) || (Date.now() - weather.time) > hour;
+            const shouldFetch = (weather.time === null) || (Date.now() - weather.time) > hour;
             if (shouldFetch) {
                 const data = await getWeatherData(lat, long);
                 setWeather({time: Date.now(), data})
@@ -14,7 +14,7 @@ export const Weather = ({lat, long}) => {
         }
     );
 
-    if(!weather) return <></>;
+    if(!weather.time) return <></>;
 
     return (
         <div className={"weather"}>
@@ -36,7 +36,7 @@ const getWeatherData = (lat, long) => {
             lat,
             long,
         },
-        url = new URL(process.env.REACT_APP_BACKEND_URL + "weather");
+        url = new URL(process.env.REACT_APP_BACKEND_URL + "/weather");
 
     url.search = new URLSearchParams(params).toString();
     return fetch(url).then(resp => resp.json()).then(({data}) => data).catch(e => console.error(e))

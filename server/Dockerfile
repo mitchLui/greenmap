@@ -17,5 +17,6 @@ LABEL org.opencontainers.image.title=$TITLE
 ARG BUILD_DATE
 LABEL org.opencontainers.image.create=$BUILD_DATE
 
-EXPOSE 80
-CMD ["uvicorn", "application:app", "--host", "0.0.0.0", "--port", "80", "--workers", "1"]
+EXPOSE $PORT
+
+CMD uvicorn application:app --host 0.0.0.0 --port $PORT --workers 1
