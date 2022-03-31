@@ -11,9 +11,9 @@ import {LoaderWindow} from "./Components/Loader/Loader";
 function App() {
     const [searchBarVisibility, setSearchBarVisibility] = useState(false)
     const [route, setRoute] = useState(null);
-    const [lat, setLat] = useState(51.4558058);
-    const [lng, setLng] = useState(-2.602799);
-    const [centre, setCentre] = useState([51.4558058, -2.602799]);
+    const [lat, setLat] = useState(51.4574);
+    const [lng, setLng] = useState(-2.5890);
+    const [centre, setCentre] = useState([51.4574, -2.5890]);
 
     const setCoords = (lat, lng) => {
         setLng(lng);
