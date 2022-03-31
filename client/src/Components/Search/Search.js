@@ -37,7 +37,11 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, s
                         {
                             suggestions.map((place, key) => <div key={key} className={"suggestion"} onClick={() => {
                                 // setHidden(true);
-                                fetch(`${process.env.REACT_APP_BACKEND_URL}/navigation?src_long=${lng}&src_lat=${lat}&dest_long=${place.coords[1]}&dest_lat=${place.coords[0]}`)
+                                var src_lng = Math.round(lng * 10000) / 10000;
+                                var src_lat = Math.round(lat * 10000) / 10000;
+                                var dest_lng = Math.round(place.coords[0] * 10000) / 10000;
+                                var dest_lat = Math.round(place.coords[1] * 10000) / 10000;
+                                fetch(`${process.env.REACT_APP_BACKEND_URL}/navigation?src_long=${src_lng}&src_lat=${src_lat}&dest_long=${dest_lng}&dest_lat=${dest_lat}`)
                                 .then(res => res.json()).then(j => {console.log(j); setInfo(j.data);});
                             }}>{place.name}</div>)
                         }
@@ -45,7 +49,7 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, s
                 </form>
             </div>
             <div className="stuff">
-                {info !== undefined && <Result info={info} setSearchBarVisibility={setSearchBarVisibility} setRoute={setRoute} />}
+                {info !== undefined && <Result recommendations={info} setSearchBarVisibility={setSearchBarVisibility} setRoute={setRoute} />}
             </div>
         </div>
     )
