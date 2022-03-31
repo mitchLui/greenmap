@@ -23,7 +23,6 @@ export const MapboxWindow = ({searchBarVisibility, setSearchBarVisibility, userL
     const [transport, setTransport] = useState({});
 
     const getTransportInfo = () => {
-        console.log('getting transport')
         const params = {
                 lat: lat,
                 long: lng,
@@ -179,8 +178,7 @@ export const MapboxWindow = ({searchBarVisibility, setSearchBarVisibility, userL
         markers.push(new mapboxgl.Marker(userLocationMarker).setLngLat([userLng, userLat]).addTo(map.current))
 
         if (transport === null) return clearMarkers;
-
-        inObj(transport, "bus_stations") && transport["bus_stations"].length > 0 &&
+        inObj(transport, "bus_stations") && transport["bus_stations"] !== null && transport["bus_stations"].length > 0 &&
         transport["bus_stations"].forEach(bus => {
             const elem = document.createElement('div');
             elem.classList.add('bus')
@@ -188,7 +186,7 @@ export const MapboxWindow = ({searchBarVisibility, setSearchBarVisibility, userL
             markers.push(new mapboxgl.Marker(elem).setLngLat([bus.long, bus.lat]).addTo(map.current))
         })
 
-        inObj(transport, "train_stations") && transport["train_stations"].length > 0 &&
+        inObj(transport, "train_stations") && transport["train_stations"] !== null && transport["train_stations"].length > 0 &&
         transport["train_stations"].forEach(train => {
             const elem = document.createElement('div');
             elem.classList.add('train')
@@ -212,7 +210,6 @@ export const MapboxWindow = ({searchBarVisibility, setSearchBarVisibility, userL
             markers.push(new mapboxgl.Marker(elem).setLngLat([bike.long, bike.lat]).addTo(map.current))
         })
 
-        console.log(transport)
         inObj(transport, "vois") && transport["vois"] !== null && transport["vois"].length > 0 &&
         transport["vois"].forEach(voi => {
             const elem = document.createElement('div');
