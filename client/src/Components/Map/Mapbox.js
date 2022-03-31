@@ -39,6 +39,8 @@ export const MapboxWindow = ({setSearchBarVisibility, searchBarVisibility, userL
     }
 
     useEffect(() => {
+        if (!map.current) return;
+        /*
             const interval_length = 60000;
             const shouldFetch = (transport.timestamp === undefined) || (Date.now() - transport.timestamp) > interval_length;
             if (shouldFetch) {
@@ -48,7 +50,8 @@ export const MapboxWindow = ({setSearchBarVisibility, searchBarVisibility, userL
             const timeout_id = setTimeout(() => getTransportInfo(), interval_length);
             return () => clearTimeout(timeout_id);
         }
-    );
+        */
+    });
 
     const inObj = (obj, key) => Object.keys(obj).includes(key);
 
@@ -60,6 +63,8 @@ export const MapboxWindow = ({setSearchBarVisibility, searchBarVisibility, userL
             center: [lng, lat],
             zoom,
         });
+        console.log("new map");
+        getTransportInfo();
     });
 
     useEffect(() => {
@@ -114,7 +119,7 @@ export const MapboxWindow = ({setSearchBarVisibility, searchBarVisibility, userL
             markers.push(new mapboxgl.Marker(elem).setLngLat([bike.long, bike.lat]).addTo(map.current))
         })
 
-        console.log(transport)
+        //console.log(transport)
         inObj(transport, "vois") && transport["vois"] !== null && transport["vois"].length > 0 &&
         transport["vois"].forEach(voi => {
             const elem = document.createElement('div');
