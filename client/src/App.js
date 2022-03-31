@@ -1,28 +1,31 @@
 import './App.css';
 import {Navbar} from "./Components/Navbar/Navbar";
-import {MapboxWindow} from "./Components/Map/Mapbox";
+import {MapboxWindow as Mapbox} from "./Components/Map/Mapbox";
 import {Search} from "./Components/Search/Search";
 import {useEffect, useState} from "react";
+import { Weather } from './Components/Weather/Weather';
 import {Route} from "./Components/Route/Route";
-import {Weather} from './Components/Weather/Weather';
-import {LoaderWindow} from "./Components/Loader/Loader";
 
 
 function App() {
     const [searchBarVisibility, setSearchBarVisibility] = useState(false)
-    const [userLat, setUserLat] = useState(null);
-    const [userLng, setUserLng] = useState(null);
-    const [centre, setCentre] = useState(null);
+    const [route, setRoute] = useState(null);
+    const [lat, setLat] = useState(51.4558058);
+    const [lng, setLng] = useState(-2.602799);
+    const [centre, setCentre] = useState([51.4558058, -2.602799]);
+
+    const setCoords = (lat, lng) => {
+        setLng(lng);
+        setLat(lat);
+    }
 
     useEffect(() => {
         const id = navigator.geolocation.watchPosition(
             (pos) => {
-                if (centre === null) {
-                    console.log('setting centre')
+                setCoords(pos.coords.latitude, pos.coords.longitude);
+                if (centre.length === 0 || pos.coords.latitude !== centre[0] || pos.coords.latitude !== centre[1]) {
                     setCentre([pos.coords.latitude, pos.coords.longitude])
                 }
-                setUserLat(pos.coords.latitude)
-                setUserLng(pos.coords.longitude)
             },
             (err) => {
                 console.log(err);
@@ -39,29 +42,22 @@ function App() {
         }
     })
 
-    const Wait_for_app_ready = () => {
-        if ([centre, userLat, userLng].includes(null)) {
-            return <LoaderWindow/>
-        } else return (
-            <>
-                <MapboxWindow searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
-                              userLat={userLat} userLng={userLng} centre={centre} setCentre={setCentre}/>
-                <Clock/>
-                <Weather lat={userLat} long={userLng}/>
-                {
-                    searchBarVisibility &&
-                    <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
-                            lat={userLat} lng={userLng} setCentre={setCentre}/>
-                }
-                {route !== null && <Route route={route} setCentre={setCentre}/>}
-            </>
-        )
-    }
 
     return (
         <div className="App">
             <Navbar/>
-            <Wait_for_app_ready/>
+            <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility} userLat={lat}
+                    setLat={setLat} userLng={lng} setLng={lng} centre={centre} setCentre={setCentre}/>
+            <Clock />
+            {<Weather lat={lat} long={lng} />}
+            {
+                searchBarVisibility &&
+                <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
+                        lat={lat} lng={lng} setCentre={setCentre} setRoute={setRoute}/>
+            }
+            {
+                route !== null && <Route route={route} setCentre={setCentre}/>
+            }
         </div>
     );
 }
@@ -87,11 +83,9 @@ const Clock = () => {
             setAmPm(am ? "AM" : "PM");
             setDate(`${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`);
         }, 1000)
-
-        return () => clearTimeout(id);
     })
 
-    return (
+    return(
         <div className={"clock"}>
             <div className={"time"}>
                 <span className={"big"}>{time}</span> {amPm}

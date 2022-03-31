@@ -24,11 +24,11 @@ export const MapboxWindow = ({setSearchBarVisibility, searchBarVisibility, userL
     const getTransportInfo = () => {
         console.log('getting transport')
         const params = {
-                lat,
+                lat: lat,
                 long: lng,
                 radius: zoom * 5
             },
-            url = new URL(API_URL + "transport/");
+            url = new URL(API_URL + "transport");
 
         url.search = new URLSearchParams(params).toString();
         fetch(url)
