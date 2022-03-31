@@ -36,7 +36,7 @@ const getWeatherData = (lat, long) => {
             lat,
             long,
         },
-        url = new URL(process.env.REACT_APP_BACKEND_URL + "/weather");
+        url = new URL(process.env.REACT_APP_BACKEND_URL + "weather");
 
     url.search = new URLSearchParams(params).toString();
     return fetch(url).then(resp => resp.json()).then(({data}) => data).catch(e => console.error(e))

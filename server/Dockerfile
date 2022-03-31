@@ -18,5 +18,4 @@ ARG BUILD_DATE
 LABEL org.opencontainers.image.create=$BUILD_DATE
 
 EXPOSE $PORT
-
 CMD uvicorn application:app --host 0.0.0.0 --port $PORT --workers 1
