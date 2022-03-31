@@ -84,9 +84,7 @@ export const MapboxWindow = ({searchBarVisibility, setSearchBarVisibility, userL
     //             return <Marker key={key} longitude={bus.long} latitude={bus.lat} onClick={() => false}>
     //                 <FontAwesomeIcon icon={faBus} size={"lg"} />
     //             </Marker>
-    //         })
-    //     }
-    //     {
+    //         })mapContainer
     //         inObj(transport, "bus_stations") && transport["train_stations"]&& transport["train_stations"].length > 0 &&
     //         transport["train_stations"].map((train, key) => {
     //             return <Marker key={key} longitude={train.long} latitude={train.lat} onClick={() => false}>
