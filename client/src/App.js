@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import { Weather } from './Components/Weather/Weather';
 import {Route} from "./Components/Route/Route";
 import { Result } from "./Components/SearchResult/Result";
+import {LoaderWindow} from "./Components/Loader/Loader";
 
 const toRad = v => v * Math.PI / 180;
 const toDeg = v => v * 180 / Math.PI;
@@ -21,7 +22,6 @@ const middlePoint = (lat1, lng1, lat2, lng2) => {
     var lng3 = lng1 + Math.atan2(bY, Math.cos(lat1) + bX);
     return [toDeg(lng3), toDeg(lat3)];
 }
-
 
 function App() {
     const [searchBarVisibility, setSearchBarVisibility] = useState(false)
@@ -70,26 +70,35 @@ function App() {
         }
     })
 
+    const Wait_for_app_ready = () => {
+        if ([centre, lat, lng].includes(null)) {
+            return <LoaderWindow/>
+        } else return (
+            <>
+                <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility} userLat={lat}
+                    setLat={setLat} userLng={lng} setLng={lng} centre={centre} setCentre={setCentre} route={route}/>
+                <Clock />
+                {<Weather lat={lat} long={lng} />}
+                {
+                    searchBarVisibility &&
+                    <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
+                            lat={lat} lng={lng} setCentre={setCentre} setInfo={setInfo}/>
+                }
+                {
+                    route !== null && <Route r={route}/>
+                }
+                {
+                    info !== null && <Result recommendations={info} setSearchBarVisibility={setSearchBarVisibility} setRoute={setRoute}
+                        setInfo={setInfo}/>
+                }
+            </>
+        )
+    }
 
     return (
         <div className="App">
             <Navbar/>
-            <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility} userLat={lat}
-                    setLat={setLat} userLng={lng} setLng={lng} centre={centre} setCentre={setCentre} route={route}/>
-            <Clock />
-            {<Weather lat={lat} long={lng} />}
-            {
-                searchBarVisibility &&
-                <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
-                        lat={lat} lng={lng} setCentre={setCentre} setInfo={setInfo}/>
-            }
-            {
-                route !== null && <Route r={route}/>
-            }
-            {
-                info !== null && <Result recommendations={info} setSearchBarVisibility={setSearchBarVisibility} setRoute={setRoute}
-                    setInfo={setInfo}/>
-            }
+            <Wait_for_app_ready/>
         </div>
     );
 }
