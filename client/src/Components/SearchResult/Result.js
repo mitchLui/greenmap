@@ -49,7 +49,7 @@ export const Result = ({recommendations, setSearchBarVisibility, setRoute, setIn
     }
     return <div className="result">
         {recommendations.routes.map((route, key) => {
-            console.log(route);
+            //console.log(route);
             return <div className="route" key={key} onClick={() => {showRoute(route, setSearchBarVisibility, setRoute)}}>
                 <div className="route-time">
                     {getRouteTime(route)}
@@ -71,7 +71,7 @@ export const Result = ({recommendations, setSearchBarVisibility, setRoute, setIn
                         return <img src="/voi-icon.svg" alt="voi" style={{width: "15px", height: "15px"}} key={lk} />
                     }
                     return <span key={lk}>{leg.mode}</span>;
-                }).reduce((prev, curr) => [prev, <FontAwesomeIcon className="routeArrowIcon" icon={faArrowRightLong}/>, curr])}
+                }).reduce((prev, curr) => [prev, <FontAwesomeIcon className="routeArrowIcon" icon={faArrowRightLong} key={"key"}/>, curr])}
                 <span className="time-taken">
                     {formatTime(route.time)}
                 </span>
