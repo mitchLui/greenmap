@@ -6,7 +6,7 @@ import transportData from "./sample.json";
 import "./map.css";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-export const token = process.env.REACT_APP_MAPBOX_API_TOKEN;
+export const token = "pk.eyJ1IjoibXNhbG1hbmtoYW4iLCJhIjoiY2wwNDg3aXJiMGIyYzNpb2czMWxkd2JzbyJ9.7fFFZSy33ckDNMdUlfUWGA";
 
 export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, centre, setCentre, route}) => {
     const API_URL = process.env.REACT_APP_BACKEND_URL;
@@ -87,7 +87,7 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
         latitude={centre[0] || 0}
         longitude={centre[1] || 0}
         mapboxAccessToken={token}
-        className={"map-container"}
+        className={"mapboxgl-canvas"}
         style={{width, height}}
         mapStyle="mapbox://styles/mapbox/dark-v10"
         onWheel={handleWheelZoom}

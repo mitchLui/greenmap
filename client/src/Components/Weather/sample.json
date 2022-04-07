@@ -3,7 +3,7 @@
       "temp": 11.39,
       "aqi": 1,
       "humidity": 60,
-      "icon_url": "http://openweathermap.org/img/wn/04d@2x.png",
+      "icon_url": "https://openweathermap.org/img/wn/04d@2x.png",
       "description": "Clouds",
       "description_detailed": "broken clouds",
       "timestamp": "2022-04-07 11:59:43"
