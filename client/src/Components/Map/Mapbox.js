@@ -1,5 +1,5 @@
-import {useRef, useState, useEffect} from "react";
-import {Map, Marker, ScaleControl, Source, Layer} from 'react-map-gl';
+import { useState, useEffect} from "react";
+import {Map, Marker, Source, Layer} from 'react-map-gl';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMagnifyingGlass, faBus, faTrain, faChargingStation, faBicycle} from "@fortawesome/free-solid-svg-icons";
 import transportData from "./sample.json";
@@ -18,14 +18,13 @@ mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worke
 export const token = process.env.REACT_APP_MAPBOX_API_TOKEN;
 
 export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, centre, setCentre, route}) => {
-    const API_URL = process.env.REACT_APP_BACKEND_URL;
+    //const API_URL = process.env.REACT_APP_BACKEND_URL;
 
     const [zoom, setZoom] = useState(15);
     const [height, setHeight] = useState(document.documentElement.clientHeight);
     const [width, setWidth] = useState(document.documentElement.clientWidth);
     const [dragStart, setDragStart] = useState([0, 0])
     const [transport, setTransport] = useState({});
-    const [transportInterval, setTransportInterval] = useState(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -77,17 +76,29 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
     }
 
     const inObj = (obj, key) => Object.keys(obj).includes(key);
-
-    const routeData = route !== null ? route.legs.map(l => l.path).flat(): [];
-
-    const data = {
-        type: "Feature",
-        properties: {},
-        geometry: {
-            type: "LineString",
-            coordinates: routeData
+    
+    var data = [];
+    if (route){
+        const routeData = route !== null ? route : {};
+        if (routeData !== undefined || routeData !== {}) {
+            //console.log(routeData);
+            data = routeData.legs.map((leg, _) => {
+                //console.log(leg.mode);
+                return {
+                    path: {
+                        type: "Feature",
+                        properties: {},
+                        geometry: {
+                            type: "LineString",
+                            coordinates: leg.path
+                        },
+                    },
+                    mode: leg.mode
+                }
+            });
         }
-    };
+    }
+
 
     return <Map
         scrollZoom={false}
@@ -140,7 +151,7 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
             inObj(transport, "vois") && transport["vois"] && transport["vois"].length > 0 &&
             transport["vois"].map((voi, key) => {
                 return <Marker key={key} longitude={voi.long} latitude={voi.lat} onClick={() => false}>
-                    <img src={"/voi-icon.svg"} width={15} height={15}/>
+                    <img src={"/voi-icon.svg"} width={15} height={15} alt={"voi scooter"}/>
                     <span className={"icon-label"}>{voi.vehicles.length}</span>
                 </Marker>
             })
@@ -149,26 +160,46 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
             inObj(transport, "tiers") && transport["tiers"] && transport["tiers"].length > 0 &&
             transport["tiers"].map((voi, key) => {
                 return <Marker key={key} longitude={voi.long} latitude={voi.lat} onClick={() => false}>
-                    <img src={"/voi-icon.svg"} width={15} height={15}/>
+                    <img src={"/voi-icon.svg"} width={15} height={15} alt={"tier scooter"}/>
                     <span className={"icon-label"}>{voi.vehicles.length}</span>
                 </Marker>
             })
         }
-        <Source id="polylineLayer" type="geojson" data={data}>
-          <Layer
-            id="lineLayer"
-            type="line"
-            source="my-data"
-            layout={{
-              "line-join": "round",
-              "line-cap": "round"
-            }}
-            paint={{
-              "line-color": "rgba(3, 170, 238, 0.5)",
-              "line-width": 5
-            }}
-          />
-        </Source>
+        {
+            data.map((route, key) => {
+                console.log(route);
+                var lineColor = "rgba(3, 170, 238, 0.5)";
+                if (route.mode === "walk") {
+                    lineColor = "rgba(255, 255, 255, 0.5)";
+                }
+                if (route.mode === "voi"){
+                    lineColor = "rgba(244, 108, 99, 0.5)";
+                }
+                if (route.mode == "bus"){
+                    lineColor = "rgba(0, 102, 0, 0.5)";
+                }
+                console.log(lineColor);
+                return (
+                <>
+                <Source id={"polylineLayer"+key.toString()} type="geojson" data={route.path} key={key}>
+                    <Layer
+                    id={"lineLayer"+key.toString()}
+                    type="line"
+                    source="my-data"
+                    layout={{
+                        "line-join": "round",
+                        "line-cap": "round"
+                    }}
+                    paint={{
+                        "line-color": lineColor,
+                        "line-width": 5
+                    }}
+                    />
+                </Source>
+                </>
+                )
+            })
+        }
         <div className={"map-controls"}>
             {/* TODO: make accessible */}
             <button onClick={() => setZoom(zoom + 1)}>+</button>
