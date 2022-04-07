@@ -36,7 +36,7 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, s
                         {
                             suggestions.map((place, key) => <div key={key} className={"suggestion"} onClick={() => {
                                 setSearchBarVisibility(false);
-                                setCentre([place.coords[1], place.coords[0]]);
+                                setCentre([51.4637, -2.6220]);
                                 /*
                                 const params = {
                                     src_long: Math.round(lng * 10000) / 10000,

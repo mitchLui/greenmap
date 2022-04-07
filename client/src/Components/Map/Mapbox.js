@@ -6,7 +6,16 @@ import transportData from "./sample.json";
 import "./map.css";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-export const token = "pk.eyJ1IjoibXNhbG1hbmtoYW4iLCJhIjoiY2wwNDg3aXJiMGIyYzNpb2czMWxkd2JzbyJ9.7fFFZSy33ckDNMdUlfUWGA";
+// added the following 6 lines.
+import mapboxgl from 'mapbox-gl';
+
+// The following is required to stop "npm build" from transpiling mapbox code.
+// notice the exclamation point in the import.
+// @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+
+export const token = process.env.REACT_APP_MAPBOX_API_TOKEN;
 
 export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, centre, setCentre, route}) => {
     const API_URL = process.env.REACT_APP_BACKEND_URL;
