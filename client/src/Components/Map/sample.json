@@ -1,0 +1,6792 @@
+{
+    "data": {
+      "train_stations": [
+        {
+          "name": "Clifton Down",
+          "lat": 51.464543,
+          "long": -2.611741,
+          "distance": 1280
+        },
+        {
+          "name": "Redland",
+          "lat": 51.468385,
+          "long": -2.599123,
+          "distance": 1564
+        },
+        {
+          "name": "Bristol Temple Meads",
+          "lat": 51.449142,
+          "long": -2.581315,
+          "distance": 1597
+        },
+        {
+          "name": "Bedminster",
+          "lat": 51.440086,
+          "long": -2.594149,
+          "distance": 1709
+        },
+        {
+          "name": "Montpelier",
+          "lat": 51.468348,
+          "long": -2.588686,
+          "distance": 1820
+        },
+        {
+          "name": "Parson Street",
+          "lat": 51.433318,
+          "long": -2.607742,
+          "distance": 2381
+        },
+        {
+          "name": "Lawrence Hill",
+          "lat": 51.45801,
+          "long": -2.56443,
+          "distance": 2680
+        },
+        {
+          "name": "Stapleton Road",
+          "lat": 51.467505,
+          "long": -2.566217,
+          "distance": 2912
+        },
+        {
+          "name": "Sea Mills",
+          "lat": 51.479992,
+          "long": -2.649949,
+          "distance": 4330
+        },
+        {
+          "name": "Shirehampton",
+          "lat": 51.484348,
+          "long": -2.679275,
+          "distance": 6257
+        }
+      ],
+      "bus_stations": [
+        {
+          "name": "College Green (P2) - SE-bound",
+          "lat": 51.45345,
+          "long": -2.60133,
+          "distance": 150
+        },
+        {
+          "name": "Cantocks Close - SE-bound",
+          "lat": 51.45583,
+          "long": -2.60231,
+          "distance": 150
+        },
+        {
+          "name": "Park Row (U5) - W-bound",
+          "lat": 51.45539,
+          "long": -2.60035,
+          "distance": 191
+        },
+        {
+          "name": "Park Row (U4) - E-bound",
+          "lat": 51.45551,
+          "long": -2.60039,
+          "distance": 196
+        },
+        {
+          "name": "College Green (P1) - N-bound",
+          "lat": 51.45301,
+          "long": -2.60086,
+          "distance": 209
+        },
+        {
+          "name": "Park Street Top (U6) - W-bound",
+          "lat": 51.45591,
+          "long": -2.60518,
+          "distance": 233
+        },
+        {
+          "name": "Park Street Top (U1) - W-bound",
+          "lat": 51.45596,
+          "long": -2.60549,
+          "distance": 252
+        },
+        {
+          "name": "Queen's Road (U2) - E-bound",
+          "lat": 51.45651,
+          "long": -2.60658,
+          "distance": 350
+        },
+        {
+          "name": "The Centre (C8) - N-bound",
+          "lat": 51.45338,
+          "long": -2.59783,
+          "distance": 360
+        },
+        {
+          "name": "The Centre (C7) - S-bound",
+          "lat": 51.45386,
+          "long": -2.59758,
+          "distance": 362
+        }
+      ],
+      "ev_chargers": [
+        {
+          "long": -2.60201,
+          "lat": 51.452831,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 227423
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.601982,
+          "lat": 51.452608,
+          "access_comments": "Private Car Park",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 227421
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "60514"
+              },
+              {
+                "statustypeid": 100
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 227422
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "60515"
+              },
+              {
+                "statustypeid": 100
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.602735,
+          "lat": 51.452485,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 227417
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "SW1"
+              },
+              {
+                "statustypeid": 100
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 227418
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 227419
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW3"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 227420
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW4"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.598994,
+          "lat": 51.454938,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 217446
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "SW1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 217447
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.59893,
+          "lat": 51.454736,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 217444
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 217445
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.602646,
+          "lat": 51.451996,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 227416
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.60513,
+          "lat": 51.45085,
+          "access_comments": "Charge point is located in underground car park bays 32 & 33. Charge point is for the use of staff & visitors only (must be pre-booked with BFM Helpdesk).",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 67715
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.609257691814264,
+          "lat": 51.45598149902531,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 6,
+            "connections": [
+              {
+                "id": 207853
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 6
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.600439,
+          "lat": 51.449286,
+          "access_comments": "Found on level -1 in the green zone",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 266553
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 266554
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.596704,
+          "lat": 51.45034,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 3,
+            "connections": [
+              {
+                "id": 65859
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 65860
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.59366,
+          "lat": 51.456799,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 4,
+            "connections": [
+              {
+                "id": 65867
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              },
+              {
+                "id": 65868
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.59322245297861,
+          "lat": 51.4521425,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 34797
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              },
+              {
+                "id": 34798
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              },
+              {
+                "id": 128962
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 16
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 4
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.608084,
+          "lat": 51.460156,
+          "access_comments": "Private Car Park",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 190239
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "60510"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 190240
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "60511"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.595233,
+          "lat": 51.448218,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 190109
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 190110
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.59116,
+          "lat": 51.458401,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 4,
+            "connections": [
+              {
+                "id": 65873
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              },
+              {
+                "id": 65874
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.58717,
+          "lat": 51.453321,
+          "access_comments": "This charge point is not for public use",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 55262
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 0
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 55782
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 75
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.58847,
+          "lat": 51.459702,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 4,
+            "connections": [
+              {
+                "id": 65619
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              },
+              {
+                "id": 65620
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.586253,
+          "lat": 51.450932,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 1,
+            "connections": [
+              {
+                "id": 178508
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 6.9
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.58516,
+          "lat": 51.456799,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 65857
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              },
+              {
+                "id": 65858
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.58663,
+          "lat": 51.449547,
+          "access_comments": "Private Car Park",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 55259
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 0
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 250
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.58729,
+          "lat": 51.46045,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 149660
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.614382,
+          "lat": 51.445598,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 1,
+            "connections": [
+              {
+                "id": 149373
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 149374
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.584469,
+          "lat": 51.448218,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 217438
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 217439
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.583835,
+          "lat": 51.448168,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 217436
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 217437
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.587624,
+          "lat": 51.464275,
+          "access_comments": "Nissan Wessex Bristol, Pennywell Road, Bristol",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 24387
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "0"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 189348
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.613954,
+          "lat": 51.442442,
+          "access_comments": "Private Car Park. Charge points are available for public use. No access at night or on Sundays.",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 55256
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 75
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 250
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.581496,
+          "lat": 51.459438,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 12,
+            "connections": [
+              {
+                "id": 181082
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 12
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.597067,
+          "lat": 51.468163,
+          "access_comments": "Station can be found within the car park of Bannatyne Gym. This station is available for all public use.",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 142992
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "reference": "CHA003-027-02"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 125
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 2
+              },
+              {
+                "id": 143001
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 125
+              },
+              {
+                "voltage": 500
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.62225,
+          "lat": 51.447262,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 227409
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.581388,
+          "lat": 51.459549,
+          "access_comments": "On 1st and 2nd Floors Zone A Level G. SatNav - use BS2 9DA \r\nUnits are http://www.pod-point.com/",
+          "chargers": {
+            "spaces": 6,
+            "connections": [
+              {
+                "id": 6560
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              },
+              {
+                "id": 7457
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.622256,
+          "lat": 51.447063,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 227406
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 227407
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.5819075578451702,
+          "lat": 51.4608875190811,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 1,
+            "connections": [
+              {
+                "id": 208327
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 100
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 208328
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 100
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 208329
+              },
+              {
+                "connectiontypeid": 1036
+              },
+              {
+                "statustypeid": 100
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 43
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.62305,
+          "lat": 51.447315,
+          "access_comments": "Located at back of building by B Bond",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 227410
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 227411
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.623801,
+          "lat": 51.462803,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 227435
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 227436
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.615144,
+          "lat": 51.47134,
+          "access_comments": "Private Business Park",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 217453
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "SW1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 217454
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.574235,
+          "lat": 51.460058,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 302863
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "id": 302864
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.5759,
+          "lat": 51.463836,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 4,
+            "connections": [
+              {
+                "id": 14648
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 125
+              },
+              {
+                "voltage": 500
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 14730
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 240
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              },
+              {
+                "id": 14731
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.570181,
+          "lat": 51.448597,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 1,
+            "connections": [
+              {
+                "id": 162168
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 162169
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 162170
+              },
+              {
+                "connectiontypeid": 1036
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 43
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.578083,
+          "lat": 51.46919,
+          "access_comments": "Publicly accessible business car park",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 190337
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.611556,
+          "lat": 51.433797,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 120793
+              },
+              {
+                "connectiontypeid": 30
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.621723,
+          "lat": 51.436376,
+          "access_comments": "Workplace charging.",
+          "chargers": {
+            "spaces": 14,
+            "connections": [
+              {
+                "id": 76591
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 10
+              },
+              {
+                "id": 76592
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 16
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.5839,
+          "lat": 51.47544,
+          "access_comments": "Charge point is located in front of Davy House, in staff car park. Charge point is for the use of staff & visitors only.",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 67957
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 75
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.563207,
+          "lat": 51.458083,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 1,
+            "connections": [
+              {
+                "id": 126236
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.567853,
+          "lat": 51.469421,
+          "access_comments": "Private Car Park",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 190341
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "60508"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 190342
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "60509"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.6341,
+          "lat": 51.436784,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 217434
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 217435
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.55953,
+          "lat": 51.45565,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 152246
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.636174,
+          "lat": 51.43581,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 217430
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "SW1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 217431
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "SW2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 217432
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW3"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 217433
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW4"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.560412,
+          "lat": 51.444899,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 3,
+            "connections": [
+              {
+                "id": 131702
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.56611586238625,
+          "lat": 51.471842502866,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 23000
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "reference": "GB*GFX*EGS10119*2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 200
+              },
+              {
+                "voltage": 500
+              },
+              {
+                "powerkw": 60
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 23001
+              },
+              {
+                "connectiontypeid": 1036
+              },
+              {
+                "reference": "GB*GFX*EGS10119*1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 200
+              },
+              {
+                "voltage": 920
+              },
+              {
+                "powerkw": 60
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.59339,
+          "lat": 51.425131,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 190007
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "SW1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 190008
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.557797,
+          "lat": 51.441731,
+          "access_comments": "Private Car Park",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 190070
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "60500"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 190071
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "60501"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.586768,
+          "lat": 51.484723,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 1,
+            "connections": [
+              {
+                "id": 153392
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 153393
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 256892
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.579002,
+          "lat": 51.482709,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 3,
+            "connections": [
+              {
+                "id": 167897
+              },
+              {
+                "connectiontypeid": 1036
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 63
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 43
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 167898
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 167899
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.551503,
+          "lat": 51.46025,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 302865
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "id": 302866
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.659059,
+          "lat": 51.46962,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 227447
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 227448
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.550023,
+          "lat": 51.474341,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 188577
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 2
+              },
+              {
+                "id": 188578
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 2
+              },
+              {
+                "id": 188579
+              },
+              {
+                "connectiontypeid": 1036
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 63
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 43
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.607045,
+          "lat": 51.41534,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 1,
+            "connections": [
+              {
+                "id": 131567
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.58472204208374,
+          "lat": 51.4938011169434,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 4,
+            "connections": [
+              {
+                "id": 273110
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "RV01034"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 2
+              },
+              {
+                "id": 273111
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "RV01035"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.593182,
+          "lat": 51.496426,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 227513
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 227514
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.593058,
+          "lat": 51.496483,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 227517
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 227518
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.593026,
+          "lat": 51.496792,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 227521
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 227522
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.66986729999996,
+          "lat": 51.465555,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 19573
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.59427,
+          "lat": 51.49869,
+          "access_comments": "Located by Somerset House via Southmead Road entrance",
+          "chargers": {
+            "spaces": 12,
+            "connections": [
+              {
+                "id": 54050
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 100
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 54051
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 100
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 54052
+              },
+              {
+                "connectiontypeid": 1036
+              },
+              {
+                "statustypeid": 100
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 63
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 43
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 151013
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 12
+              },
+              {
+                "id": 151014
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 5
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.550763,
+          "lat": 51.485726,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 1,
+            "connections": [
+              {
+                "id": 166451
+              },
+              {
+                "connectiontypeid": 1036
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 43
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 166452
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 166453
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.58447278885501,
+          "lat": 51.4107089032861,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 67711
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.537032,
+          "lat": 51.427926,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 217425
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 217426
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.599077,
+          "lat": 51.405461,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 206526
+              },
+              {
+                "connectiontypeid": 1036
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 63
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 43
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 206527
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 125
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 206528
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "reference": "3"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 125
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.532846,
+          "lat": 51.477985,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 227469
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 227470
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 125
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 227471
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "reference": "3"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 125
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.521339,
+          "lat": 51.451631,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 1,
+            "connections": [
+              {
+                "id": 133607
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.518417,
+          "lat": 51.449444,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 302857
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "id": 302858
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.554901,
+          "lat": 51.501078,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 190649
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "SW1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 190650
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.554038,
+          "lat": 51.501004,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 190645
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "SW1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 190646
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.55421,
+          "lat": 51.501138,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 190652
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "SW1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "id": 190653
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "SW2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.630708,
+          "lat": 51.50798,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 3,
+            "connections": [
+              {
+                "id": 8353
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 8354
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 8355
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.559975,
+          "lat": 51.505863,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 26215
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 100
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 220
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.509464,
+          "lat": 51.46184,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 3,
+            "connections": [
+              {
+                "id": 135049
+              },
+              {
+                "connectiontypeid": 1036
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 63
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 43
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 135050
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 135051
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 135068
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.582766,
+          "lat": 51.511765,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 1,
+            "connections": [
+              {
+                "id": 121920
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.54279399999996,
+          "lat": 51.501148,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 76176
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.506667,
+          "lat": 51.461333,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 302867
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "id": 302868
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.553816,
+          "lat": 51.50782,
+          "access_comments": "Take main entrance to Sainsbury's car park by turning right at mini-roundabout opposite petrol station.  Continue to far end then turn right towards corner of main building.",
+          "chargers": {
+            "spaces": 6,
+            "connections": [
+              {
+                "id": 118294
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 6
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.500966,
+          "lat": 51.449065,
+          "access_comments": "Situated in the car park behind the leisure centre and near the entrance to the building. Take the first exit off the roundabout on Leisure Road and then first left into the car park.",
+          "chargers": {
+            "spaces": 1,
+            "connections": [
+              {
+                "id": 190116
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "reference": "RV00029-1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 125
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 190117
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "reference": "RV00029-2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 125
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 190118
+              },
+              {
+                "connectiontypeid": 1036
+              },
+              {
+                "reference": "RV00029-3"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 63
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 43
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.510278,
+          "lat": 51.481917,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 302910
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "id": 302911
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.688797,
+          "lat": 51.490342,
+          "access_comments": "Monday 06:00 AM - 09:30 PM, Tuesday 06:00 AM - 09:30 PM, Wednesday 06:00 AM - 09:30 PM, Thursday 06:00 AM - 09:30 PM, Friday 06:00 AM - 09:30 PM, Saturday 07:00 AM - 08:00 PM",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 217461
+              },
+              {
+                "connectiontypeid": 1036
+              },
+              {
+                "reference": "RV00004"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 63
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 43
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 217462
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "reference": "RV00004"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 125
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 217463
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "reference": "RV00004"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 125
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 262390
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "RV01008"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              },
+              {
+                "id": 262391
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "RV01007"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.689291,
+          "lat": 51.491501,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 217468
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 217469
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.694619,
+          "lat": 51.422584,
+          "access_comments": "",
+          "chargers": {
+            "spaces": "Unknown",
+            "connections": [
+              {
+                "id": 189996
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "reference": "SW1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.548342,
+          "lat": 51.51089,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 4,
+            "connections": [
+              {
+                "id": 132167
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 4
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.6201873199531747,
+          "lat": 51.520928223996066,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 1,
+            "connections": [
+              {
+                "id": 208324
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 208325
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 208326
+              },
+              {
+                "connectiontypeid": 1036
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 43
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.58790254592896,
+          "lat": 51.5214948442812,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 83000
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 2
+              },
+              {
+                "id": 83001
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.706308,
+          "lat": 51.477207,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 8,
+            "connections": [
+              {
+                "id": 95668
+              },
+              {
+                "connectiontypeid": 27
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 120
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 8
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.588318009362524,
+          "lat": 51.5223920009235,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 8,
+            "connections": [
+              {
+                "id": 305725
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 200
+              },
+              {
+                "voltage": 920
+              },
+              {
+                "powerkw": 120
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 8
+              },
+              {
+                "id": 305726
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 8
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.609229,
+          "lat": 51.522884,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 6,
+            "connections": [
+              {
+                "id": 218269
+              },
+              {
+                "connectiontypeid": 27
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 120
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 6
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.706834,
+          "lat": 51.477402,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 34710
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 150
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 200
+              },
+              {
+                "voltage": 500
+              },
+              {
+                "powerkw": 100
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 34711
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 150
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 34712
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 150
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 200
+              },
+              {
+                "voltage": 920
+              },
+              {
+                "powerkw": 60
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 310935
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 150
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 200
+              },
+              {
+                "voltage": 920
+              },
+              {
+                "powerkw": 60
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 310936
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 150
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 200
+              },
+              {
+                "voltage": 920
+              },
+              {
+                "powerkw": 60
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.542644,
+          "lat": 51.514366,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 4,
+            "connections": [
+              {
+                "id": 105324
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.595388,
+          "lat": 51.525108,
+          "access_comments": "Car park K. Charging availability Mon to Fri 09.30 to 21.00, Sat 09.00 to 20.00, Sun 11.00 to 17.00. Note: there are only two charging bays, with two charging stations in each.      CYC fastcharger on parking J",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 8299
+              },
+              {
+                "connectiontypeid": 3
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 13
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 3
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 8300
+              },
+              {
+                "connectiontypeid": 4
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 16
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 4
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.6064504474173873,
+          "lat": 51.52535114199833,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 4,
+            "connections": [
+              {
+                "id": 306040
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 4
+              },
+              {
+                "id": 306041
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 4
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.615667,
+          "lat": 51.52511,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 6,
+            "connections": [
+              {
+                "id": 295169
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "reference": "GB-GFX-EGS10394-2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 200
+              },
+              {
+                "voltage": 500
+              },
+              {
+                "powerkw": 100
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 295170
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "reference": "GB-GFX-EGS10394-1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 200
+              },
+              {
+                "voltage": 920
+              },
+              {
+                "powerkw": 120
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 303868
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "reference": "GB-GFX-EGS10395-1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 200
+              },
+              {
+                "voltage": 920
+              },
+              {
+                "powerkw": 120
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 303869
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "reference": "GB-GFX-EGS10395-2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 200
+              },
+              {
+                "voltage": 920
+              },
+              {
+                "powerkw": 120
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 303870
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "reference": "GB-GFX-EGS10396-1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 200
+              },
+              {
+                "voltage": 920
+              },
+              {
+                "powerkw": 120
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 303871
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "reference": "GB-GFX-EGS10396-2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 200
+              },
+              {
+                "voltage": 920
+              },
+              {
+                "powerkw": 120
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.6006,
+          "lat": 51.52614,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 8,
+            "connections": [
+              {
+                "id": 208022
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 230
+              },
+              {
+                "powerkw": 7
+              },
+              {
+                "currenttypeid": 10
+              },
+              {
+                "quantity": 8
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.6143,
+          "lat": 51.526199,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 1,
+            "connections": [
+              {
+                "id": 253590
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "reference": "1"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 125
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 253591
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "reference": "2"
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 125
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 257945
+              },
+              {
+                "connectiontypeid": 1036
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 63
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 43
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.5998056,
+          "lat": 51.5266939,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 2,
+            "connections": [
+              {
+                "id": 114350
+              },
+              {
+                "connectiontypeid": 27
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 120
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        {
+          "long": -2.575285,
+          "lat": 51.525482,
+          "access_comments": "",
+          "chargers": {
+            "spaces": 3,
+            "connections": [
+              {
+                "id": 202842
+              },
+              {
+                "connectiontypeid": 33
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 202843
+              },
+              {
+                "connectiontypeid": 1036
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "amps": 63
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 43
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 3
+              },
+              {
+                "id": 202844
+              },
+              {
+                "connectiontypeid": 2
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 3
+              },
+              {
+                "powerkw": 50
+              },
+              {
+                "currenttypeid": 30
+              },
+              {
+                "quantity": 1
+              },
+              {
+                "id": 203246
+              },
+              {
+                "connectiontypeid": 25
+              },
+              {
+                "statustypeid": 50
+              },
+              {
+                "levelid": 2
+              },
+              {
+                "amps": 32
+              },
+              {
+                "voltage": 400
+              },
+              {
+                "powerkw": 22
+              },
+              {
+                "currenttypeid": 20
+              },
+              {
+                "quantity": 1
+              }
+            ]
+          }
+        }
+      ],
+      "santander_cycles": [],
+      "vois": [
+        {
+          "lat": 51.455506801605225,
+          "long": -2.602724015712738,
+          "vehicles": [
+            {
+              "reg": "7dsb",
+              "battery": 100,
+              "lat": 51.45549774169922,
+              "long": -2.6027565002441406
+            },
+            {
+              "reg": "n54j",
+              "battery": 95,
+              "lat": 51.455535888671875,
+              "long": -2.602740526199341
+            },
+            {
+              "reg": "pbs3",
+              "battery": 38,
+              "lat": 51.45553970336914,
+              "long": -2.6027398109436035
+            },
+            {
+              "reg": "v7cq",
+              "battery": 78,
+              "lat": 51.45552062988281,
+              "long": -2.6027228832244873
+            },
+            {
+              "reg": "9c83",
+              "battery": 75,
+              "lat": 51.455528259277344,
+              "long": -2.602678060531616
+            },
+            {
+              "reg": "vbmb",
+              "battery": 62,
+              "lat": 51.455482482910156,
+              "long": -2.60270619392395
+            },
+            {
+              "reg": "s746",
+              "battery": 89,
+              "lat": 51.455543518066406,
+              "long": -2.6027278900146484
+            },
+            {
+              "reg": "thda",
+              "battery": 76,
+              "lat": 51.4555549621582,
+              "long": -2.602736234664917
+            },
+            {
+              "reg": "35gn",
+              "battery": 75,
+              "lat": 51.45548629760742,
+              "long": -2.6027133464813232
+            },
+            {
+              "reg": "4h98",
+              "battery": 84,
+              "lat": 51.45553970336914,
+              "long": -2.6027615070343018
+            },
+            {
+              "reg": "5tmu",
+              "battery": 75,
+              "lat": 51.455509185791016,
+              "long": -2.6026275157928467
+            },
+            {
+              "reg": "32by",
+              "battery": 66,
+              "lat": 51.455501556396484,
+              "long": -2.602649688720703
+            },
+            {
+              "reg": "cc5j",
+              "battery": 69,
+              "lat": 51.455482482910156,
+              "long": -2.6027414798736572
+            },
+            {
+              "reg": "y4pe",
+              "battery": 70,
+              "lat": 51.455440521240234,
+              "long": -2.60278058052063
+            },
+            {
+              "reg": "7yfn",
+              "battery": 89,
+              "lat": 51.45555877685547,
+              "long": -2.6027891635894775
+            },
+            {
+              "reg": "lj93",
+              "battery": 90,
+              "lat": 51.455387115478516,
+              "long": -2.602712869644165
+            }
+          ]
+        },
+        {
+          "lat": 51.45581218174526,
+          "long": -2.602524961744036,
+          "vehicles": [
+            {
+              "reg": "k8nb",
+              "battery": 29,
+              "lat": 51.45582580566406,
+              "long": -2.6025550365448
+            },
+            {
+              "reg": "sal7",
+              "battery": 69,
+              "lat": 51.455772399902344,
+              "long": -2.6025431156158447
+            },
+            {
+              "reg": "qry3",
+              "battery": 32,
+              "lat": 51.455772399902344,
+              "long": -2.602465867996216
+            },
+            {
+              "reg": "jc8r",
+              "battery": 91,
+              "lat": 51.45583724975586,
+              "long": -2.6025400161743164
+            },
+            {
+              "reg": "eqxy",
+              "battery": 90,
+              "lat": 51.455814361572266,
+              "long": -2.6026227474212646
+            },
+            {
+              "reg": "y27t",
+              "battery": 35,
+              "lat": 51.45582962036133,
+              "long": -2.602426052093506
+            },
+            {
+              "reg": "rk5x",
+              "battery": 88,
+              "lat": 51.455833435058594,
+              "long": -2.6025218963623047
+            }
+          ]
+        },
+        {
+          "lat": 51.455684185028076,
+          "long": -2.6033590734004974,
+          "vehicles": [
+            {
+              "reg": "p874",
+              "battery": 69,
+              "lat": 51.45568084716797,
+              "long": -2.603400468826294
+            },
+            {
+              "reg": "vuhh",
+              "battery": 29,
+              "lat": 51.45570373535156,
+              "long": -2.6033380031585693
+            },
+            {
+              "reg": "k2dv",
+              "battery": 63,
+              "lat": 51.455657958984375,
+              "long": -2.6033661365509033
+            },
+            {
+              "reg": "7fp5",
+              "battery": 51,
+              "lat": 51.45568084716797,
+              "long": -2.6033968925476074
+            },
+            {
+              "reg": "lrvg",
+              "battery": 42,
+              "lat": 51.45571517944336,
+              "long": -2.6033692359924316
+            },
+            {
+              "reg": "v3p3",
+              "battery": 57,
+              "lat": 51.45570373535156,
+              "long": -2.6033225059509277
+            },
+            {
+              "reg": "tm4l",
+              "battery": 20,
+              "lat": 51.45568084716797,
+              "long": -2.603353977203369
+            },
+            {
+              "reg": "5ucl",
+              "battery": 34,
+              "lat": 51.455650329589844,
+              "long": -2.603325366973877
+            }
+          ]
+        },
+        {
+          "lat": 51.45583724975586,
+          "long": -2.602623224258423,
+          "vehicles": [
+            {
+              "reg": "mvpb",
+              "battery": 90,
+              "lat": 51.45583724975586,
+              "long": -2.602623224258423
+            }
+          ]
+        },
+        {
+          "lat": 51.45420455932617,
+          "long": -2.6006104946136475,
+          "vehicles": [
+            {
+              "reg": "dk6e",
+              "battery": 25,
+              "lat": 51.45420455932617,
+              "long": -2.6006104946136475
+            }
+          ]
+        },
+        {
+          "lat": 51.455692291259766,
+          "long": -2.6033987998962402,
+          "vehicles": [
+            {
+              "reg": "fqzy",
+              "battery": 33,
+              "lat": 51.455692291259766,
+              "long": -2.6033987998962402
+            }
+          ]
+        },
+        {
+          "lat": 51.45436477661133,
+          "long": -2.600717782974243,
+          "vehicles": [
+            {
+              "reg": "4m5e",
+              "battery": 90,
+              "lat": 51.45436477661133,
+              "long": -2.600717782974243
+            }
+          ]
+        },
+        {
+          "lat": 51.45553970336914,
+          "long": -2.6026055812835693,
+          "vehicles": [
+            {
+              "reg": "btrg",
+              "battery": 96,
+              "lat": 51.45553970336914,
+              "long": -2.6026055812835693
+            }
+          ]
+        },
+        {
+          "lat": 51.45560073852539,
+          "long": -2.6036696434020996,
+          "vehicles": [
+            {
+              "reg": "n2hk",
+              "battery": 88,
+              "lat": 51.45560073852539,
+              "long": -2.6036696434020996
+            }
+          ]
+        }
+      ],
+      "tiers": [],
+      "timestamp": "2022-04-07 12:05:00"
+    },
+    "message": "Got data for 51.4545, -2.6027",
+    "success": true
+  }

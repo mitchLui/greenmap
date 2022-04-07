@@ -2,6 +2,7 @@ import {useRef, useState, useEffect} from "react";
 import {Map, Marker, ScaleControl, Source, Layer} from 'react-map-gl';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMagnifyingGlass, faBus, faTrain, faChargingStation, faBicycle} from "@fortawesome/free-solid-svg-icons";
+import transportData from "./sample.json";
 import "./map.css";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -29,6 +30,7 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
     }, [height, width]);
 
     const getTransportInfo = () => {
+        /*
         const params = {
                 lat: centre[0],
                 long: centre[1],
@@ -42,6 +44,8 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
             .then(({data}) => {
                 setTransport(data);
             })
+        */
+        setTransport(transportData.data);
     }
 
     useEffect(() => {

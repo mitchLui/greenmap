@@ -1,5 +1,6 @@
 import "./Weather.css";
 import {useEffect, useState} from "react";
+import weatherData from "./sample.json";
 
 export const Weather = ({lat, long}) => {
     const [weather, setWeather] = useState({time: null, data: null})
@@ -32,6 +33,7 @@ export const Weather = ({lat, long}) => {
 
 
 const getWeatherData = (lat, long) => {
+    /*
     const params = {
             lat,
             long,
@@ -40,4 +42,6 @@ const getWeatherData = (lat, long) => {
 
     url.search = new URLSearchParams(params).toString();
     return fetch(url).then(resp => resp.json()).then(({data}) => data).catch(e => console.error(e))
+    */
+   return weatherData.data;
 }

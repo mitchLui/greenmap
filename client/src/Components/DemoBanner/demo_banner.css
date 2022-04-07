@@ -1,0 +1,10 @@
+.demo-container {
+    position: absolute;
+    width: 50%;
+    height: 6rem;
+    bottom: 2rem;
+    left: 25%;
+    background: black;
+    padding-left: 2rem;
+    border: 2px solid yellow;
+}

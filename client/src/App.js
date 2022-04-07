@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import { Weather } from './Components/Weather/Weather';
 import {Route} from "./Components/Route/Route";
 import { Result } from "./Components/SearchResult/Result";
+import { DemoBanner } from './Components/DemoBanner/DemoBanner';
 
 const toRad = v => v * Math.PI / 180;
 const toDeg = v => v * 180 / Math.PI;
@@ -28,9 +29,9 @@ function App() {
     const [weather, setWeather] = useState({icon_url: undefined});
     const [route, setRoute] = useState(null);
     const [info, setInfo] = useState(null);
-    const [lat, setLat] = useState(51.4574);
-    const [lng, setLng] = useState(-2.5890);
-    const [centre, setCentre] = useState([51.4574, -2.5890]);
+    const [lat, setLat] = useState(51.4545);
+    const [lng, setLng] = useState(-2.6027);
+    const [centre, setCentre] = useState([51.4545, -2.6027]);
 
     const setCoords = (newLat, newLng) => {
         if (lat !== newLat || lng !== newLng) {
@@ -78,11 +79,12 @@ function App() {
             <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility} lat={lat}
                     setLat={setLat} lng={lng} setLng={lng} centre={centre} setCentre={setCentre} route={route}/>
             <Clock />
+            <DemoBanner/>
             {<Weather lat={lat} long={lng} />}
             {
                 searchBarVisibility &&
                 <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
-                        lat={lat} lng={lng} setCentre={setCentre} setRoute={setInfo}/>
+                        lat={lat} lng={lng} setCentre={setCentre} setInfo={setInfo}/>
             }
             {
                 route !== null && <Route r={route}/>

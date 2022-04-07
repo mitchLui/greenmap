@@ -1,8 +1,9 @@
 import "./Search.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faL, faXmark} from "@fortawesome/free-solid-svg-icons";
+import {faXmark} from "@fortawesome/free-solid-svg-icons";
 import {token} from "../Map/Mapbox";
 import {useState} from "react";
+import navigationData from './sample.json';
 
 export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, setCentre, setInfo}) => {
     const [suggestions, setSuggestions] = useState([]);
@@ -36,6 +37,7 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, s
                             suggestions.map((place, key) => <div key={key} className={"suggestion"} onClick={() => {
                                 setSearchBarVisibility(false);
                                 setCentre([place.coords[1], place.coords[0]]);
+                                /*
                                 const params = {
                                     src_long: Math.round(lng * 10000) / 10000,
                                     src_lat: Math.round(lat * 10000) / 10000,
@@ -46,6 +48,8 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, s
                                 url.search = new URLSearchParams(params).toString();
                                 fetch(url)
                                 .then(res => res.json()).then(j => {setInfo(j.data);});
+                                */
+                               setInfo(navigationData.data);
                             }}>{place.name}</div>)
                         }
                     </div>

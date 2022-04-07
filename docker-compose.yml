@@ -5,9 +5,12 @@ services:
     image: "frontend"
     hostname: "frontend"
     container_name: "frontend"
-    build: ./client
+    environment:
+      - PORT=3000
+    build: 
+      context: ./client
     ports:
-      - 8080:3000
+      - 80:3000
     labels:
       kompose.service.type: LoadBalancer
       kompose.image-pull-policy: "Never"
@@ -15,6 +18,9 @@ services:
     image: "backend"
     hostname: "backend"
     container_name: "backend"
-    build: ./server
+    environment:
+      - PORT=80
+    build: 
+      context: ./server
     ports:
       - 5001:80
