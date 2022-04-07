@@ -14,7 +14,7 @@ const middlePoint = (lat1, lng1, lat2, lng2) => {
 }
 
 export const Route = ({r, setCentre}) => {
-    console.log(r);
+    //console.log(r);
     // setCentre(r.start, r.end)
     // plot route on map
     // set zoom level (somehow)
