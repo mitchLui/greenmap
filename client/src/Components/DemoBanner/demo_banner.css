@@ -1,4 +1,5 @@
 .demo-container {
+    cursor: pointer;
     position: absolute;
     width: 50%;
     bottom: 2rem;
