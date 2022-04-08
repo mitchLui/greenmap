@@ -73,6 +73,12 @@ function App() {
         }
     })
 
+    /*
+    removed from app return for now
+    {
+        route !== null && <Route r={route}/>
+    }
+    */
 
     return (
         <div className="App">
@@ -87,9 +93,7 @@ function App() {
                 <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
                         lat={lat} lng={lng} setCentre={setCentre} setInfo={setInfo}/>
             }
-            {
-                route !== null && <Route r={route}/>
-            }
+
             {
                 info !== null && <Result recommendations={info} setSearchBarVisibility={setSearchBarVisibility} setRoute={setRoute}
                     setInfo={setInfo}/>

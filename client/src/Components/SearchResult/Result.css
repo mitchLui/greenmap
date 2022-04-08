@@ -13,6 +13,10 @@
     border-spacing: 2px;
 }
 
+.route:hover{
+    background: #2c2c2c;
+}
+
 .routeArrowIcon {
     padding: 0px 10px;
 }

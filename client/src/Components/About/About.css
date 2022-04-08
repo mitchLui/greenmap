@@ -29,3 +29,12 @@
 #aboutContent a:visited {
     color: white;
 }
+
+#contacts{
+    list-style: none;
+}
+
+#contact-link{
+    color: rgb(3, 148, 3);
+
+}

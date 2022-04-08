@@ -114,7 +114,7 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
         onDrag={handleDrag}
         onDragStart={({originalEvent: {screenX, screenY}}) => setDragStart([screenX, screenY])}
     >
-        <Marker longitude={lng} latitude={lat} color="red" onClick={() => false}/>
+        <Marker longitude={lng} latitude={lat} color="green" onClick={() => false}/>
         {
             inObj(transport, "bus_stations") && transport["bus_stations"] && transport["bus_stations"].length > 0 &&
             transport["bus_stations"].map((bus, key) => {
