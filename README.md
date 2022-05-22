@@ -41,6 +41,10 @@ Called Rogue One, the team consists of 6 students from the University of Bristol
 
 ## 1.3. Our Project
 
+DEMO:
+
+> http://greenmap-demo.herokuapp.com
+
 We created a Google-Map like application that allows users to search for a location and then view the weather and traffic information for that location, but specically for methods that promotes sustainable shared mobility and transport e.g. e-scooters.
 
 ![sample](sample.png)
@@ -106,7 +110,7 @@ This creates a compose network with 2 containers:
 
 ## 1.6. Usage
 
-To be added
+A demo of the page can be accessed through [this heroku app][8].
 
 ---
 
@@ -117,3 +121,4 @@ To be added
 [5]:https://github.com/matthewjackswann
 [6]:https://www.linkedin.com/in/otis-lee/
 [7]:mailto:jm20101@bristol.ac.uk
+[8]:http://greenmap-demo.herokuapp.com
