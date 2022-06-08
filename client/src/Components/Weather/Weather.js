@@ -16,9 +16,7 @@ export const Weather = ({lat, long}) => {
                     return weather.data;
                 }
             }
-            setWeather(prevState =>{
-                return {...prevState, data: fetchWeather()};
-            })
+            setWeather({time: Date.now(), data: fetchWeather()});
         }
     , [lat, long, weather.time, weather.data]);
 
