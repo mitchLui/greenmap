@@ -5,13 +5,6 @@ import weatherData from "./sample.json";
 export const Weather = ({lat, long}) => {
     const [weather, setWeather] = useState({time: null, data: null})
 
-    /*
-    const [state, setState] = useState({});
-setState(prevState => {
-  return {...prevState, ...updatedValues};
-});
-    */
-
     useEffect(() => {
             const fetchWeather = () => {
                 const hour = 60 * 60 * 1000;
