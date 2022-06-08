@@ -1,7 +1,6 @@
 const toRad = v => v * Math.PI / 180;
 const toDeg = v => v * 180 / Math.PI;
-
-const middlePoint = (lat1, lng1, lat2, lng2) => {
+export const middlePoint = (lat1, lng1, lat2, lng2) => {
     var dLng = toRad(lng2 - lng1);
     lat1 = toRad(lat1);
     lat2 = toRad(lat2);

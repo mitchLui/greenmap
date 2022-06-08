@@ -21,21 +21,20 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
     //const API_URL = process.env.REACT_APP_BACKEND_URL;
 
     const [zoom, setZoom] = useState(15);
-    const [height, setHeight] = useState(document.documentElement.clientHeight);
-    const [width, setWidth] = useState(document.documentElement.clientWidth);
+    const [height, setHeight] = useState(window.innerHeight);
+    const [width, setWidth] = useState(window.innerWidth);
     const [dragStart, setDragStart] = useState([0, 0])
     const [transport, setTransport] = useState({});
 
     useEffect(() => {
         const handleResize = () => {
-            const [newWidth, newHeight] = [document.documentElement.clientWidth, document.documentElement.clientHeight];
+            const [newWidth, newHeight] = [width, height];
             setHeight(newHeight);
             setWidth(newWidth);
         }
-        window.addEventListener("resize", handleResize);
-
-        return () => window.removeEventListener("resize", handleResize);
-    }, [height, width]);
+        window.onresize = handleResize;
+        
+    }, [width, height]);
 
     const getTransportInfo = () => {
         /*
@@ -175,7 +174,7 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
                 if (route.mode === "voi"){
                     lineColor = "rgba(244, 108, 99, 0.5)";
                 }
-                if (route.mode == "bus"){
+                if (route.mode === "bus"){
                     lineColor = "rgba(0, 102, 0, 0.5)";
                 }
                 console.log(lineColor);

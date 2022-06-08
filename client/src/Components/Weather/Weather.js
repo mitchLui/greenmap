@@ -5,15 +5,20 @@ import weatherData from "./sample.json";
 export const Weather = ({lat, long}) => {
     const [weather, setWeather] = useState({time: null, data: null})
 
-    useEffect(async () => {
+    useEffect(() => {
+        const fetchWeather = () => {
             const hour = 60 * 60 * 1000;
             const shouldFetch = (weather.time === null) || (Date.now() - weather.time) > hour;
             if (shouldFetch) {
-                const data = await getWeatherData(lat, long);
-                setWeather({time: Date.now(), data})
+                const data = getWeatherData(lat, long);
+                return data;
+            } else {
+                return weather.data;
             }
         }
-    );
+        setWeather({time: Date.now(), data: fetchWeather()})
+        }
+    , [weather, lat, long, setWeather]);
 
     if(!weather.time) return <></>;
 

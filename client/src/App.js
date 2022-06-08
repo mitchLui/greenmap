@@ -4,7 +4,6 @@ import {Mapbox} from "./Components/Map/Mapbox";
 import {Search} from "./Components/Search/Search";
 import {useEffect, useState} from "react";
 import { Weather } from './Components/Weather/Weather';
-import {Route} from "./Components/Route/Route";
 import { Result } from "./Components/SearchResult/Result";
 import { DemoBanner } from './Components/DemoBanner/DemoBanner';
 
@@ -26,7 +25,6 @@ const middlePoint = (lat1, lng1, lat2, lng2) => {
 
 function App() {
     const [searchBarVisibility, setSearchBarVisibility] = useState(false)
-    const [weather, setWeather] = useState({icon_url: undefined});
     const [route, setRoute] = useState(null);
     const [info, setInfo] = useState(null);
     const [lat, setLat] = useState(51.4545);
@@ -108,7 +106,7 @@ const Clock = () => {
     const [date, setDate] = useState("27th February 2020");
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "Decemmber"];
     useEffect(() => {
-        const id = setTimeout(() => {
+        setTimeout(() => {
             const date = new Date(Date.now());
             let hour = date.getHours(),
                 am = true,
