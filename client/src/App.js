@@ -24,7 +24,7 @@ const middlePoint = (lat1, lng1, lat2, lng2) => {
 
 
 function App() {
-    const [searchBarVisibility, setSearchBarVisibility] = useState(false)
+    const [searchBarVisibility, setSearchBarVisibility] = useState(false);
     const [route, setRoute] = useState(null);
     const [info, setInfo] = useState(null);
     const [lat, setLat] = useState(51.4545);
@@ -83,7 +83,7 @@ function App() {
             <Navbar/>
             <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility} lat={lat}
                     setLat={setLat} lng={lng} setLng={lng} centre={centre} setCentre={setCentre} route={route}/>
-            <Clock />
+            <Clock/>
             {showDemoWarning && <DemoBanner closeFunction={() => setShowDemoWarning(false)}/>}
             {<Weather lat={lat} long={lng} />}
             {
@@ -100,6 +100,7 @@ function App() {
     );
 }
 
+/*
 const Clock = () => {
     const [time, setTime] = useState("00:00");
     const [amPm, setAmPm] = useState("AM");
@@ -133,5 +134,37 @@ const Clock = () => {
     )
 
 }
+*/
 
+const Clock = () => {
+    const [dateTime, setDateTime] = useState(new Date());
+
+    useEffect(() => {
+        if (dateTime){
+            setInterval(()=> setDateTime(new Date()), 1000);
+        }
+    }, [dateTime]);
+    
+
+    return(
+        <div className={"clock"}>
+            <div className={"time"}>
+                <span className={"big"}>
+                    {dateTime.toLocaleTimeString('en-US', {
+                        hour: 'numeric',
+                        minute: 'numeric',
+                        hour12: true,
+                    })}
+                </span>
+            </div>
+            <div className={"date"}>{                        
+                dateTime.toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'short',
+                    year: 'numeric',
+                })}
+            </div>
+        </div>
+    )
+}
 export default App;

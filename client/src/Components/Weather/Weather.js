@@ -5,20 +5,29 @@ import weatherData from "./sample.json";
 export const Weather = ({lat, long}) => {
     const [weather, setWeather] = useState({time: null, data: null})
 
+    /*
+    const [state, setState] = useState({});
+setState(prevState => {
+  return {...prevState, ...updatedValues};
+});
+    */
+
     useEffect(() => {
-        const fetchWeather = () => {
-            const hour = 60 * 60 * 1000;
-            const shouldFetch = (weather.time === null) || (Date.now() - weather.time) > hour;
-            if (shouldFetch) {
-                const data = getWeatherData(lat, long);
-                return data;
-            } else {
-                return weather.data;
+            const fetchWeather = () => {
+                const hour = 60 * 60 * 1000;
+                const shouldFetch = (weather.time === null) || (Date.now() - weather.time) > hour;
+                if (shouldFetch) {
+                    const data = getWeatherData(lat, long);
+                    return data;
+                } else {
+                    return weather.data;
+                }
             }
+            setWeather(prevState =>{
+                return {...prevState, data: fetchWeather()};
+            })
         }
-        setWeather({time: Date.now(), data: fetchWeather()})
-        }
-    , [weather, lat, long, setWeather]);
+    , [lat, long, weather.time, weather.data]);
 
     if(!weather.time) return <></>;
 
