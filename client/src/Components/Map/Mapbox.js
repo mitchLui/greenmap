@@ -28,13 +28,11 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
 
     useEffect(() => {
         const handleResize = () => {
-            const [newWidth, newHeight] = [width, height];
-            setHeight(newHeight);
-            setWidth(newWidth);
+            setHeight(window.innerHeight);
+            setWidth(window.innerWidth);
         }
         window.onresize = handleResize;
-        
-    }, [width, height]);
+    });
 
     const getTransportInfo = () => {
         /*
