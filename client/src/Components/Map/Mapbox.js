@@ -98,7 +98,7 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
 
     const handleSetDest = (dest) => {
         if (dest){
-            return <Marker longitude={dest[1]} latitude={dest[0]} color="blue" onClick={() => false}/>;
+            return <Marker longitude={dest[1]} latitude={dest[0]} color="#3bb2d0" onClick={() => false}/>;
         } else {
             return <></>;
         }
