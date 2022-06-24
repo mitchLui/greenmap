@@ -1,0 +1,33 @@
+.vehicle-info{
+    padding: 0 1rem 0 1rem;
+    border: 1px solid #757575;
+    border-radius: 10px;
+    font-size: 1rem;
+    width: 10rem;
+    height: 10rem;
+    overflow-y: scroll;
+}
+
+.vehicle-info::-webkit-scrollbar{
+    padding-right: 5px;
+    width: 10px;
+    border-radius: 10px;
+    background: #606060;
+}
+.vehicle-info::-webkit-scrollbar-track{
+    border-radius: 10px;
+    background: #606060;
+}
+
+.vehicle-info::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #131313;
+}
+
+.vehicle{
+    padding: 1rem;
+}
+
+.not-visible{
+    display: none;
+}

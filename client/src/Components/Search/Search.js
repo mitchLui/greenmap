@@ -5,7 +5,7 @@ import {token} from "../Map/Mapbox";
 import {useState} from "react";
 import navigationData from './sample.json';
 
-export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, setCentre, setInfo}) => {
+export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, setCentre, setInfo, setDest}) => {
     const [suggestions, setSuggestions] = useState([]);
     const geocode = (q) => {
         const params = {
@@ -37,6 +37,7 @@ export const Search = ({searchBarVisibility, setSearchBarVisibility, lat, lng, s
                             suggestions.map((place, key) => <div key={key} className={"suggestion"} onClick={() => {
                                 setSearchBarVisibility(false);
                                 setCentre([51.4637, -2.6220]);
+                                setDest([51.4637, -2.6220]);
                                 /*
                                 const params = {
                                     src_long: Math.round(lng * 10000) / 10000,

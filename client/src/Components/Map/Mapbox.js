@@ -17,7 +17,7 @@ mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worke
 
 export const token = process.env.REACT_APP_MAPBOX_API_TOKEN;
 
-export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, centre, setCentre, route}) => {
+export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, centre, setCentre, dest, route}) => {
     //const API_URL = process.env.REACT_APP_BACKEND_URL;
 
     const [zoom, setZoom] = useState(15);
@@ -96,6 +96,14 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
         }
     }
 
+    const handleSetDest = (dest) => {
+        if (dest){
+            return <Marker longitude={dest[1]} latitude={dest[0]} color="blue" onClick={() => false}/>;
+        } else {
+            return <></>;
+        }
+    }
+
 
     return <Map
         scrollZoom={false}
@@ -112,6 +120,9 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
         onDragStart={({originalEvent: {screenX, screenY}}) => setDragStart([screenX, screenY])}
     >
         <Marker longitude={lng} latitude={lat} color="green" onClick={() => false}/>
+        {
+            handleSetDest(dest)
+        }
         {
             inObj(transport, "bus_stations") && transport["bus_stations"] && transport["bus_stations"].length > 0 &&
             transport["bus_stations"].map((bus, key) => {
@@ -164,7 +175,6 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
         }
         {
             data.map((route, key) => {
-                console.log(route);
                 var lineColor = "rgba(3, 170, 238, 0.5)";
                 if (route.mode === "walk") {
                     lineColor = "rgba(255, 255, 255, 0.5)";
@@ -175,7 +185,6 @@ export const Mapbox = ({searchBarVisibility, setSearchBarVisibility, lng, lat, c
                 if (route.mode === "bus"){
                     lineColor = "rgba(0, 102, 0, 0.5)";
                 }
-                console.log(lineColor);
                 return (
                 <>
                 <Source id={"polylineLayer"+key.toString()} type="geojson" data={route.path} key={key}>

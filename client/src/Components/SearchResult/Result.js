@@ -43,7 +43,7 @@ const showRoute = (route, setSearchBarVisibility, setRoute) => {
     setRoute(route);
 }
 
-export const Result = ({recommendations, setSearchBarVisibility, setRoute, setInfo}) => {
+export const Result = ({recommendations, setSearchBarVisibility, setRoute}) => {
     if (!("routes" in recommendations && recommendations.routes.length > 0)) {
         return <div className="result">No results</div>;
     }

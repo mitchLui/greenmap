@@ -29,7 +29,8 @@ function App() {
     const [info, setInfo] = useState(null);
     const [lat, setLat] = useState(51.4545);
     const [lng, setLng] = useState(-2.6027);
-    const [centre, setCentre] = useState([51.4545, -2.6027]);
+    const [dest, setDest] = useState([0, 0]);
+    const [centre, setCentre] = useState([lat, lng]);
     const [showDemoWarning, setShowDemoWarning] = useState(true);
 
     const setCoords = (newLat, newLng) => {
@@ -82,59 +83,22 @@ function App() {
         <div className="App">
             <Navbar/>
             <Mapbox searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility} lat={lat}
-                    setLat={setLat} lng={lng} setLng={lng} centre={centre} setCentre={setCentre} route={route}/>
+                    setLat={setLat} lng={lng} setLng={lng} centre={centre} setCentre={setCentre} dest={dest} route={route}/>
             <Clock/>
             {showDemoWarning && <DemoBanner closeFunction={() => setShowDemoWarning(false)}/>}
             {<Weather lat={lat} long={lng} />}
             {
                 searchBarVisibility &&
                 <Search searchBarVisibility={searchBarVisibility} setSearchBarVisibility={setSearchBarVisibility}
-                        lat={lat} lng={lng} setCentre={setCentre} setInfo={setInfo}/>
+                        lat={lat} lng={lng} setCentre={setCentre} setInfo={setInfo} setDest={setDest}/>
             }
 
             {
-                info !== null && <Result recommendations={info} setSearchBarVisibility={setSearchBarVisibility} setRoute={setRoute}
-                    setInfo={setInfo}/>
+                info !== null && <Result recommendations={info} setSearchBarVisibility={setSearchBarVisibility} setRoute={setRoute}/>
             }
         </div>
     );
 }
-
-/*
-const Clock = () => {
-    const [time, setTime] = useState("00:00");
-    const [amPm, setAmPm] = useState("AM");
-    const [date, setDate] = useState("27th February 2020");
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "Decemmber"];
-    useEffect(() => {
-        setTimeout(() => {
-            const date = new Date(Date.now());
-            let hour = date.getHours(),
-                am = true,
-                minute = date.getMinutes();
-
-            if (hour > 12) {
-                am = false;
-                hour -= 12;
-            }
-
-            setTime(`${String(hour).padStart(2, 0)}:${String(minute).padStart(2, 0)}`);
-            setAmPm(am ? "AM" : "PM");
-            setDate(`${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`);
-        }, 1000)
-    })
-
-    return(
-        <div className={"clock"}>
-            <div className={"time"}>
-                <span className={"big"}>{time}</span> {amPm}
-            </div>
-            <div className={"date"}>{date}</div>
-        </div>
-    )
-
-}
-*/
 
 const Clock = () => {
     const [dateTime, setDateTime] = useState(new Date());
